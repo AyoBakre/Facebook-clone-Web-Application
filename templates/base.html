@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css')}}">
+    
+    {% if title %}
+        <title>Facebook - {{ title }}</title>
+    {% else %}
+        <title>Facebook</title>
+    {% endif %}
+
+</head>
+<body>
+    
+    <!--Header Starts-->
+        <header class="header">
+            <nav class="icon1">
+                <div><img class="img1" src="images/Tobybook.jpg" /></div>
+                <div><input class="input1" type="text" onfocus="hideIcon(this);" placeholder="Search Toby's Facebook" /></div>
+                <!-- onfocus="hideIcon(this);": an event attribute to hide background image on focus -->
+            </nav>
+        
+            <nav class="icon">
+                <p class="home"><img class="mid" id="mide" src="images/Home.jpg" /></p>
+                <p class="p"><img class="mid" src="images/Watch.jpg" /></p>
+                <p class="p"><img class="mid" src="images/Groups.jpg" /></p>
+                <p class="p"><img class="mid" src="images/Gaming.png" /></p>
+            </nav>
+        
+            <nav class="black">
+                <div class="black1"><img class="profile" src="images/profile.jpg" /><span id="prof"> Enoch</span></div>
+                <div class="black2"><img class="blacke" src="images/black_plus.jpg" /></div>
+                <div class="black3"><img class="blacke" src="images/black_messenger1.jpg" /></div>
+                <div class="black4"><img class="blacke" id="blacken" src="images/black_notification1.jpg" /></div>
+                <div class="black5"><img class="blacke" src="images/arrow_drop_down.png" /></div>
+            </nav>
+        </header>
+        
+        <header class="header2">
+            <nav class="icon3">
+                <div><img class="img1" src="images/Tobybook.jpg" /></div>
+                <div><input class="input3" type="text" onfocus="hideIcon(this);" /></div>
+            </nav>
+        
+            <nav class="icon5">
+                <p class="home1"><img class="mid1" id="mid1" src="images/Home.jpg" /></p>
+                <p class="p"><img id="mid1" src="images/Watch.jpg" /></p>
+                <p class="p"><img id="mid1" src="images/Groups.jpg" /></p>
+                <p class="p"><img id="mid1" src="images/Gaming.png" /></p>
+            </nav>
+        
+            <nav class="black">
+                <div class="black1"><img class="profile" src="images/profile.jpg" /><span id="prof"> Enoch</span></div>
+                <div class="black2"><img class="blacke" src="images/black_plus.jpg" /></div>
+                <div class="black3"><img class="blacke" src="images/black_messenger1.jpg" /></div>
+                <div class="black4"><img class="blacke" id="blacken" src="images/black_notification1.jpg" /></div>
+                <div class="black5"><img class="blacke" src="images/arrow_drop_down.png" /></div>
+            </nav>
+        </header>
+    <!--Header Ends-->
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+</html>

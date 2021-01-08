@@ -1,0 +1,728 @@
+body {
+    background-color: rgb(231, 229, 229);
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: left;
+}
+
+img {
+    width: auto;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.header {
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: white;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    font-family: verdana;
+    display: flex;
+    box-shadow: 0 1px 5px rgb(194, 193, 193);
+}
+
+@media screen and (max-width: 1180px) {  /* for screen size adaptation */
+    .header {
+        display: none;
+}
+}
+
+.icon1 {
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: 35px;
+    background: white;
+    top: 7px;
+    left: 0px;
+    font-family: verdana;
+    display: flex;
+    z-index: 3; /* specifying document layer */
+}
+
+.img1 {
+    margin-top: 0px;
+    height: 35px;
+    cursor: pointer; /*for pointing at objects*/
+}
+
+.input1 {
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    border: 0px;
+    border-radius: 20px; /* to have curved radius */
+    background-color: rgb(231, 229, 229);
+    width: 245px;
+    height: 35px;
+    cursor: pointer; /*for pointing at objects*/
+}
+
+.input1 {
+    background-image: url(images/search.jpg); /* to have a background image */
+    background-size: 30px;
+    background-repeat: no-repeat;  /* background images do repeat */
+    background-position: left;
+    text-indent: 15px;
+}
+
+.input1:focus {  /* to make image disappear on focus */
+    background-image: none; 
+    text-indent: 0px;
+}
+
+.icon {
+    float: left;
+    position: fixed;
+    width: 100px;
+    height: 35px;
+    background: white;
+    top: 0;
+    left: 350px;
+    font-family: verdana;
+    display: flex;
+    z-index: 3;
+    margin-top: 0px;
+}
+
+.icon {
+    left: 50%;
+    width: 460px;
+    margin-left: -230px;
+}
+
+.home, .p {
+    margin: 12px 45px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.mid {
+    margin-left: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.mid:hover {  /* give characteristics when hovering over objects */
+    padding-top: 2px;
+}
+
+#mide {
+    width: 65px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -7px;
+}
+
+.black {
+    float: right;
+    position: fixed;
+    width: 320px;
+    height: 35px;
+    background: white;
+    top: 7px;
+    margin-right: 0px;
+    font-family: verdana;
+    display: flex;
+}
+
+.black {
+    position: fixed;
+    right: 25%;
+    width: 290px;
+    margin-right: -145px;
+    right: 170px;
+    z-index: 3;
+}
+
+.black2, .black3, .black4, .black5 {
+    height: 22px;
+}
+
+.black1, .black2, .black3, .black4, .black5 {
+    padding-top: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.blacke {
+    border-radius: 100%;
+    background-color: rgb(196, 196, 196);
+}
+
+#blacken {
+    width: 28px;
+}
+
+.black1 {
+    display: flex;
+}
+
+.blacke:hover {
+    padding-top: 2px;
+}
+
+@media screen and (max-width: 850px) {
+    .black {
+        display: none;
+    }
+}
+
+.profile {
+    margin-left: 2px;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#prof {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.header2 {
+    display: flex;
+    float: left;
+    position:fixed;
+    width: 100%;
+    height: 50px;
+    background: white;
+    top: 0px;
+    left: 0px;
+    font-family: verdana;
+    z-index: 2;
+    box-shadow: 0 1px 5px rgb(194, 193, 193);
+}
+
+@media screen and (min-width: 1180px) {
+    .header2 {
+        display: none;
+}
+}
+
+.icon3 {
+    float: left;
+    position:fixed;
+    width: 100%;
+    height: 35px;
+    background: white;
+    top: 7px;
+    left: 0px;
+    font-family: verdana;
+    display: flex;
+    z-index: 3;
+}  
+
+.input3 {
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    border: 0px;
+    border-radius: 100%;
+    background-color: rgb(231, 229, 229);
+    width: 25px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.input3 {
+    background-image: url(images/search.jpg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 20px;
+}
+
+.input3:focus {
+    background-image: none;
+    text-indent: 0px;
+}
+
+.icon5 {
+    float: left;
+    position:fixed;
+    width: 100%;
+    height: 35px;
+    background: white;
+    top: 0;
+    left: 85px;
+    font-family: verdana;
+    display: flex;
+    z-index: 3;
+    margin-top: 0px;
+    margin-left: 3px;
+}  
+
+.home1 {
+    margin: 5px 65px;
+    margin-left: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.mid1 {
+    width: 65px;
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: -65px;
+}
+
+#mid1:hover {
+    padding-top: 2px;
+}
+
+.left {
+    position: fixed;
+    margin-top: 40px;
+    z-index: 0;
+}
+
+@media screen and (max-width: 1180px) {
+    .left {
+        display: none;
+}
+}
+
+.div {
+    margin: 12px 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+#covid {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+#covid:hover {
+    background-color: rgb(197, 197, 197);
+    border-radius: 5px;
+}
+
+.side {
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+}
+
+#side {
+    margin-left: 10px;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.see-more {
+    margin-left: 10px;
+    background-color: rgb(189, 186, 186);
+    width: 195px;
+    height: 25px;
+    padding-left: 95px;
+    padding-top: 5px;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.see-more:hover {
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+}
+
+.navigate {
+    margin-bottom: 0;
+    padding: 0;
+    margin-left: 10px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav, .nav1 {
+    display: flex;
+    font-size: small;
+    color: gray;
+    line-height: 0px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1180px) {
+    .nav1 {
+        display: none;
+}
+}
+
+#main {
+    margin: 60px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1180px) {
+    .main {
+        max-width: 570px;
+        margin: auto;
+}
+}
+
+.article1 {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+    box-shadow: 0 1px 5px rgb(194, 193, 193);
+}
+
+.row2 {
+    display: flex;
+    margin-right: 5px;
+}
+
+#row2 {
+    border-bottom: 1px solid rgb(231, 229, 229);
+}
+
+.input2 {
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border: 0px;
+    background-color: rgb(231, 229, 229);
+    width: 440px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.up {
+    display: flex;
+    width: 460px;
+}
+
+.up1 {
+    display: flex;
+    margin-right: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#up {
+    height: 15px;
+    margin-right: 5px;
+}
+
+.article2 {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(194, 193, 193);
+}
+
+.post {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+#aside0 {
+    width: 125px;
+}
+
+.donald {
+    font-weight: bold;
+    margin-left: 10px;
+    width: 165px;
+    cursor: pointer;
+}
+
+.notification {
+    margin-left: 10px;
+    display: flex;
+    margin-top: 0;
+}
+
+.hour {
+    font-size: 13px;
+    color: gray;
+}
+
+#notify {
+    width: auto;
+    height: 15px;
+    margin-left: 10px;
+} 
+
+.updated {
+    font-size: 15px;
+    color: gray;
+    width: 275px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.ellipse {
+    font-weight: bold;
+    margin-left: 35px;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.pix {
+    background-color: rgb(194, 190, 190);
+    height: 220px;
+    cursor: pointer;
+}
+
+.trump {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.result {
+    display: flex;
+    padding-top: 220px;
+    font-family: sans-serif;
+    font-size: small;
+}
+
+.border1 {
+    border-top: 2px solid rgb(231, 229, 229);;
+    display: flex;
+    width: 100%;
+}
+
+.well {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    display: flex;
+    color: gray;
+}
+
+#like1 {
+    width: auto;
+    height: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.num1 {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.num2 {
+    margin-left: 260px;
+    cursor: pointer;
+}
+
+.action {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.border {
+    border-top: 1px solid rgb(231, 229, 229);
+    display: flex;
+    width: 90%;
+}
+
+.like {
+    margin-left: 50px;
+    padding-right: 20px;
+    margin-top: 10px;
+    color: rgb(88, 86, 86);
+    display: flex;
+    cursor: pointer;
+}
+
+#like, #comment, #share {
+    width: auto;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.comment {
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-top: 10px;
+    color: rgb(88, 86, 86);
+    display: flex;
+    cursor: pointer;
+}
+
+.share {
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-top: 10px;
+    color: rgb(88, 86, 86);
+    display: flex;
+    cursor: pointer;
+}
+
+#span:hover {
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+    padding-top: 1px;
+}
+
+.replies {
+    padding-top: 5px;
+    width: 90%;
+    border-top: 1px solid rgb(231, 229, 229);;
+    display: flex;
+    margin-left: 5%;
+} 
+
+.aside2 {
+    display: block;
+    cursor: pointer;
+}
+
+.donald1 {
+    font-weight: bold;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.updated1 {
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.react {
+    display: flex;
+    margin: 5px 10px;
+}
+.dot, .dot1, .dot0 {
+    margin-right: 5px;
+    font-size: small;
+    font-weight: 600;
+    color: gray;
+}
+
+.dot {
+    cursor: pointer;
+}
+
+.dot1 {
+    font-weight: normal;
+}
+
+.dot:hover {
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+    padding-top: 1px;
+}
+
+.click {
+    font-weight: bold;
+    color: rgb(75, 75, 207);
+}
+
+.dblclick {
+    color: rgb(88, 86, 86);
+    background-color: white;
+}
+
+.dblclick1 {
+    color: gray;
+    background-color: white;
+}
+
+#row3 {
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-left: 26px;
+}
+
+.row3 {
+    display: flex;
+    margin-right: 2px;
+}
+
+.input4 {
+    margin-left: 5px;
+    border-radius: 20px;
+    padding-left: 15px;
+    border: 0px;
+    background-color: rgb(231, 229, 229);
+    width: 425px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.divp {
+    margin: 5px 66px;
+    font-size: small;
+    padding-bottom: 5px;
+}
+
+.right {
+    right: 0px;
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    margin-right: 50px;
+    z-index: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .right {
+        display: none;
+}
+}
+
+.wright {
+    display: flex;
+    margin: 10px 5px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.wright:hover {
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+}
+
+.white {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+#white {
+    border-radius: 100%;
+    width: 50px;
+    height: 52px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+#white:hover {
+    padding-bottom: 2px;
+}

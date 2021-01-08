@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css')}}">
+
+    {% if title %}
+        <title>Facebook - {{ title }}</title>
+    {% else %}
+        <title>Facebook</title>
+    {% endif %}
+</head>
+<body>
+    
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='/img/fb.png')}}" alt="logo" class="logo">
+
+        <form action="" class="login_form">
+            <div class="email">
+                <div class="font">Email</div>
+                <input type="email">
+            </div>
+            <div class="password">
+                <div class="font">Password</div>
+                <input type="password">
+            </div>
+            <button class="login_btn">Log In</button>
+        </form>
+    </nav>
+
+    <section>
+        <div class="logo_body">
+            <img src="{{ url_for('static', filename='img/fb2.png')}}" alt="logo" class="logobody">
+            <p class="like_font font1">Thanks for stopping by</p>
+            <p class="like_font">we hope to see you again soon</p>
+        </div>
+        <div class="signup_body">
+            <p class="acc_crt">Create an Account</p>
+            <p class="free_hint">It's free and always will be</p>
+            <form method="POST" action="" class="signup_form">
+                {{ reg_form.hidden_tag() }}
+            <div>
+                <input type="text" class="firstname" name="" placeholder="First Name">
+                <input type="text" class="lastname" name="" placeholder="Last Name">
+                <input type="text" class="username" name="" placeholder="{{ reg_form.username.label. }}">
+                <input type="email" class="email" name="" placeholder="Email">
+                <input type="password" class="password" name="" placeholder="Password">
+                <input type="password" class="password2" name="" placeholder="Confirm Password">
+            </div>
+            <p class="birthday">Birthday</p>
+            <div class="birth_date">
+                <select class="month" name="" id="">
+                    <option>Month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>June</option><option>July</option><option>Aug</option><option>Sept</option><option>Oct</option><option>Nov</option><option>Dec</option>
+                </select>
+                <select class="day" name="" id="">
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+
+                </select>
+                <select class="year" name="" id="">
+                    <option>Year</option>
+                    <option>1970</option>
+                    <option>1971</option>
+                    <option>1972</option>
+                    <option>1973</option>
+                    <option>1974</option>
+                    <option>1975</option>
+                    <option>1976</option>
+                    <option>1977</option>
+                    <option>1978</option>
+                    <option>1979</option>
+                    <option>1980</option>
+                    <option>1981</option>
+                    <option>1982</option>
+                    <option>1983</option>
+                    <option>1984</option>
+                    <option>1985</option>
+                    <option>1986</option>
+                    <option>1987</option>
+                    <option>1988</option>
+                    <option>1989</option>
+                    <option>1990</option>
+                    <option>1991</option>
+                    <option>1992</option>
+                    <option>1993</option>
+                    <option>1994</option>
+                    <option>1995</option>
+                    <option>1996</option>
+                    <option>1997</option>
+                    <option>1998</option>
+                    <option>1999</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+
+                </select>
+                <small class="brth_hint"><a href="">Why provide my birthday information</a></small>
+            </div>
+            <input type="radio" name="gender" value="male">
+            <input type="radio" name="gender" value="female">
+            <p class="font">Male</p>
+            <p class="font font2">Female</p>
+
+            <p class="agreement">By Clicking Sign up, you agree to our <a href="">Terms and Conditions</a></p>
+
+            <button class="signup">Sign Up</button>
+            </form>
+        </div>
+    </section>
+    
+    <script src="{{ url_for('static', filename='/js/index.js')}}"></script>
+
+</body>
+</html>
