@@ -3,7 +3,7 @@ from forms import RegistrationForm, LoginForm
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'apsdfmgndkekalke'
+app.config['SECRET_KEY'] = 'this is a secret key change to random later'
 
 
 @app.route("/")

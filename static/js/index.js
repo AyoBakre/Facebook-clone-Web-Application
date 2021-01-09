@@ -1,11 +1,11 @@
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
+const openBtn = document.getElementById('openBtn')
+const popup= document.getElementById('popup')
+const closeBtn = document.getElementById('closeBtn')
 
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
-});
+openBtn.addEventListener('click',() =>{
+    popup.style.display='inline'
+})
 
-sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
-});
+closeBtn.addEventListener('click', ()=>{
+    popup.style.display='none'
+})

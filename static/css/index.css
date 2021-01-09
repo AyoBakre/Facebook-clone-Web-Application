@@ -4,6 +4,10 @@
     --fnt: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
 }
 
+body, html{
+    background-color: #f0f2f5;
+}
+
 .facebookIco{
     height: 106px;
 }
@@ -23,6 +27,7 @@
     position: absolute;
     left: 145px;
     bottom: 171px;
+    bottom: 250px;
 }
 
 .right{
@@ -76,7 +81,7 @@
 .openBtn{
     position: absolute;
     color: white;
-    bottom: 23px;
+    bottom: 50px;
     font-weight: 700;
     align-items: center;
     background-color: #42b72a;
@@ -91,5 +96,166 @@
 }
 
 .pf{
-    color: ;
+    color: #1877f2;
+    font-size: 14px;
+    line-height: 18.5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #1877f2;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.regi_container{
+    border-radius: 8px;
+    width: 432px;
+    height: 521px;
+    height: 560px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    z-index: 20;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1);
+    transform: translate(-50%,-50%);
+    outline: none;
+    display: none;
+}
+
+.closebtn{
+    background-color: white;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.heading{
+    font-family: var(--fnt);
+    font-size: 32px;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.heading_des{
+    color: #606770;
+    font-family: var(--fnt);
+    font-size: 15px;
+    margin-top: -25px;
+    margin-left: 20px;
+}
+
+hr{
+    opacity: 0.4;
+}
+
+.fname{
+    width: 167px;
+    padding: 11px;
+    font-size: 13px;
+    line-height: 16px;
+    font-family: var(--fnt);
+    border-radius: 5px;
+    border: 0.5px solid rgba(20,16,16,0.24);
+    background-color: #f5f6f7;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.regi_email{
+    width: 87%;
+    padding: 11px;
+    font-size: 15px;
+    line-height: 16px;
+    font-family: var(--fnt);
+    border-radius: 5px;
+    border: 0.5px solid rgba(20,16,16,0.24);
+    background-color: #f5f6f7;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.date_of, .gender{
+    line-height: 20px;
+    font-family: var(--fnt);
+    color: #606770;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+#date, #year, #month{
+    border-radius: 4px;
+    color: #1c1e21;
+    font-family: var(--fnt);
+    font-size: 15px;
+    font-weight: normal;
+    height: 36px;
+    line-height: 20px;
+    width: 120.5px;
+    margin-left: 15px;
+}
+
+.check1{
+    border-radius: 4px;
+    color:#1c1e21 ;
+    font-family: var(--fnt);
+    font-size: 15px;
+    font-weight: normal;
+    height: 36px;
+    line-height: 20px;
+    width: 118.5px;
+    margin-left: 15px;
+    display: inline-block;   
+    border: 0.5px solid rgba(20,16,16,0.24);
+}
+
+.checkp{
+    display: inline-block;
+    font-style: 15px;
+    font-family: var(--fnt);
+    margin: 10px 10px;
+    color: #1c1e21;
+}
+
+#icheck{
+    width: 10px;
+    height: 20px;
+    position: relative;
+    right: -30px;
+    top: 5px;
+}
+
+.rules{
+    color: #777;
+    font-size: 11px;
+    font-family: var(--fnt);
+    margin-left: 17px;
+}
+
+.signUPbtn{
+    background-color: #00a400;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 32px;
+    padding-right: 32px;
+    height: 36px;
+    color: white;
+    text-shadow: none;
+    margin-left: 148px;
+    outline:none;
 }
