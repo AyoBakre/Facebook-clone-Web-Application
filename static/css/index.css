@@ -81,7 +81,7 @@ body, html{
 .openBtn{
     position: absolute;
     color: white;
-    bottom: 50px;
+    bottom: 30px;
     font-weight: 700;
     align-items: center;
     background-color: #42b72a;
@@ -110,6 +110,12 @@ a{
 
 a:hover{
     text-decoration: underline;
+}
+
+.remember{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .regi_container{
