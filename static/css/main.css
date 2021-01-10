@@ -8,7 +8,7 @@ body {
 img {
     width: auto;
     height: 30px;
-    margin-left: 10px;
+    margin-left: -10px;
 }
 
 .header {
@@ -45,29 +45,29 @@ img {
 }
 
 .img1 {
-    margin-top: 0px;
-    height: 35px;
+    margin-top: -11px;
+    height: 60px;
     cursor: pointer; /*for pointing at objects*/
 }
 
 .input1 {
     margin-top: 0px;
-    margin-left: 5px;
+    margin-left: -15px;
     margin-right: 50px;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 15px;
     border: 0px;
     border-radius: 20px; /* to have curved radius */
-    background-color: rgb(231, 229, 229);
+    background-color: #f0f2f5;
     width: 245px;
     height: 35px;
     cursor: pointer; /*for pointing at objects*/
 }
 
 .input1 {
-    background-image: url(images/search.jpg); /* to have a background image */
-    background-size: 30px;
+    background-image: url('/static/img/search.png'); /* to have a background image */
+    background-size: 20px;
     background-repeat: no-repeat;  /* background images do repeat */
     background-position: left;
     text-indent: 15px;
@@ -725,4 +725,51 @@ img {
 
 #white:hover {
     padding-bottom: 2px;
+}
+
+
+/* The alert message box */
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  padding: 20px;
+  background-color: #4CAF50; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-info {
+  padding: 20px;
+  background-color: #2196F3; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-warning {
+  padding: 20px;
+  background-color: #f0d90b;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.alert_closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.alert_closebtn:hover {
+  color: black;
 }

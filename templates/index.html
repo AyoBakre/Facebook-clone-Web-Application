@@ -19,7 +19,7 @@
         <p class="fb_des">Facebook helps you connect and share <br/> with the people in your life</p>
     </div>
     <div class="right">
-        <form action="">
+        <form action="" method="POST">
             <input type="email" class="in1" placeholder="Email">
             <input type="password" class="in1" placeholder="Password">
             <input type="checkbox" value="lsRememberMe" id="rememberMe" class="remember"> <label for="rememberMe">Remember me</label>
@@ -40,12 +40,65 @@
         <hr>
         
         <form action="" method="POST">
+            
             {{ reg_form.hidden_tag() }}
-            <input type="text" class="fname" placeholder="First Name">
-            <input type="text" class="fname" placeholder="Surname">
-            <input type="email" class="regi_email" placeholder="Enter email">
-            <input type="password" class="regi_email" placeholder="Enter Password">
-            <input type="password" class="regi_email" placeholder="Confirm Password">
+
+            {% if reg_form.fname.errors %}
+            {{ reg_form.fname(class="fname" , placeholder="First Name") }}
+            <div class="fname-alert-danger">
+                {% for error in reg_form.fname.errors %}
+                <span class="fname-alert_closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ reg_form.fname(class="fname" , placeholder="First Name") }}
+            {% endif %}
+
+
+            {% if reg_form.lname.errors %}
+            {{ reg_form.lname(class="fname is-invalid" , placeholder="Last Name") }}
+            <div class="fname-alert-danger">
+                {% for error in reg_form.lname.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ reg_form.lname(class="fname" , placeholder="Last Name") }}
+            {% endif %}
+
+            {% if reg_form.email.errors %}
+            {{ reg_form.email(class="regi_email is-invalid" , placeholder="Enter Email") }}
+            <div class="email-alert-danger">
+                {% for error in reg_form.email.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ reg_form.email(class="regi_email", placeholder="Enter Email") }}
+            {% endif %}
+           
+            {% if reg_form.password.errors %}
+            {{ reg_form.password(class="regi_email is-invalid" , placeholder="Enter Password") }}
+            <div class="password-alert-danger">
+                {% for error in reg_form.password.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ reg_form.password(class="regi_email", placeholder="Enter Password") }}
+            {% endif %}
+
+            {% if reg_form.confirm_password.errors %}
+            {{ reg_form.confirm_password(class="regi_email is-invalid" , placeholder="Confirm Password") }}
+            <div class="password-alert-danger">
+                {% for error in reg_form.confirm_password.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ reg_form.confirm_password(class="regi_email", placeholder="Confirm Password") }}
+            {% endif %}
             
             <p class="date_of">Date of Birth</p>
             <select name="date" id="date">
@@ -145,7 +198,9 @@
             <p class="rules">By clicking Sign Up, you agree to our <a href="">Terms</a>, <a href="">Data Policy</a> and <a
                     href="">Cookie Policy</a>. You<br> may receive SMS notifications from us
                 and can opt out at any time.</p>
-            <button class="signUPbtn">Sign Up</button>
+            
+            {{ reg_form.submit(class="signUPbtn") }}
+
         </form>
 
     </div>
