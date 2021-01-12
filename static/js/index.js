@@ -9,3 +9,6 @@ openBtn.addEventListener('click',() =>{
 closeBtn.addEventListener('click', ()=>{
     popup.style.display='none'
 })
+
+
+

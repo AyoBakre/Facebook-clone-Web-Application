@@ -269,10 +269,14 @@ hr{
 
 /* The alert message box */
 .fname-alert-danger {
-  padding: 20px;
+  padding: 2px;
   background-color: #f44336; 
   color: white;
-  margin-bottom: 15px;
+  margin-top: -30px;
+  text-align: center;
+  margin-left: -330px;
+  position: absolute;
+  font-size: 15px;
 }
 
 /* The close button */
@@ -289,5 +293,93 @@ hr{
 
 /* When moving the mouse over the close button */
 .fname-alert_closebtn:hover {
+  color: black;
+}
+
+/* The alert message box */
+.email-alert-danger {
+  padding: 2px;
+  background-color: #f44336; 
+  color: white;
+  margin-top: -30px;
+  text-align: center;
+  margin-left: -170px;
+  position: absolute;
+  font-size: 15px;
+}
+
+/* The close button */
+.email-alert_closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.email-alert_closebtn:hover {
+  color: black;
+}
+
+/* The alert message box */
+.password-alert-danger {
+  padding: 2px;
+  background-color: #f44336; 
+  color: white;
+  margin-top: -30px;
+  text-align: center;
+  margin-left: -172px;
+  position: absolute;
+  font-size: 15px;
+}
+
+/* The close button */
+.password-alert_closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.password-alert_closebtn:hover {
+  color: black;
+}
+
+
+/* The alert message box */
+.confirm_password-alert-danger {
+  padding: 2px;
+  background-color: #f44336; 
+  color: white;
+  margin-top: -30px;
+  text-align: center;
+  margin-left: -240px;
+  position: absolute;
+  font-size: 15px;
+}
+
+/* The close button */
+.confirm_password-alert_closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.confirm_password-alert_closebtn:hover {
   color: black;
 }
