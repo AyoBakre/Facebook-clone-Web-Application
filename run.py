@@ -1,9 +1,15 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegistrationForm, LoginForm
+from datetime import datetime
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this is a secret key change to random later'
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+db = SQLAlchemy(app)
 
+from models import User, Post
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/index", methods=['GET', 'POST'])
