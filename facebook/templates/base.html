@@ -17,7 +17,6 @@
 
 </head>
 <body>
-    
     <!--navbar-->
     <nav>
         <!--logo and search-->
@@ -88,27 +87,21 @@
                     <img src="{{ url_for('static', filename='img/bell.svg')}}" alt="">
                 </div>
     
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='img/arrow.svg')}}" alt="">
+                <div class="dropdown">
+                    <div class="icon">
+                        <img class="drop_img" src="{{ url_for('static', filename='img/arrow.svg')}}" alt="" onclick="myFunction()">
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                            <a href="{{ url_for('logout')}}">Log Out</a>
+                            <a href="#">Give feedback</a>
+                            <a href="#">help and support</a>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </nav>
 
-    <!-- Flash Alert Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-    {% for category, message in messages %}
-
-        <div class="alert-{{ category }}">
-            <span class="alert_closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            {{ message }}
-        </div>
-        
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <!-- Flash Alert Messages ends -->
     
 
     {% block content %}

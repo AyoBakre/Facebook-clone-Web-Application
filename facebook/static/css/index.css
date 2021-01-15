@@ -383,3 +383,49 @@ hr{
 .confirm_password-alert_closebtn:hover {
   color: black;
 }
+
+/* The alert message box */
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  padding: 20px;
+  background-color: #4CAF50; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-info {
+  padding: 20px;
+  background-color: #2196F3; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.alert-warning {
+  padding: 20px;
+  background-color: #f0d90b;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.alert_closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.alert_closebtn:hover {
+  color: black;
+}

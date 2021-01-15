@@ -13,6 +13,20 @@
     {% endif %}
 </head>
 <body>
+    <!-- Flash Alert Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    
+    <div class="alert-{{ category }}">
+        <span class="alert_closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{ message }}
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <!-- Flash Alert Messages ends -->
     
     <div class="left" >
         <img class="facebookIco" src="{{ url_for('static', filename='img/fb.svg')}}" alt="logo">
