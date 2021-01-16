@@ -4,17 +4,18 @@
 
 /*  variables and defaul css */
 :root {
-    --primary: rgb(3, 29, 46);
-    --accent: rgb(7, 42, 65);
-    --lighter: rgb(26, 68, 100);
+    --primary: #f0f2f5;
+    --accent: #fff;
+    --lighter: #f0f2f5;
     --blue: rgb(29, 63, 214);
-    --font: rgb(206, 206, 206);
-    --placeholder: rgb(219, 219, 219);
+    --font: rgb(112, 107, 107);
+    --placeholder: rgb(90, 87, 87);
     --notification: #ff4d4d;
     --green: rgb(19, 209, 19);
     --border: #5AA1FF;
-    --border-bottom: #043474;
+    --border-bottom: #65676B;
     --white: #fff;
+    --black: #1c1e21;
 }
 
 body,
@@ -119,7 +120,7 @@ a {
 
 .user h4,
 .item-row h4 {
-    color: var(--white);
+    color: var(--black);
     font-weight: 400;
     font-size: 0.88rem;
     margin: 10px;
@@ -129,7 +130,7 @@ a {
 h6.title {
     font-weight: 500;
     font-size: 1em;
-    color: var(--font);
+    color: var(--black);
     text-transform: capitalize;
 }
 
@@ -140,10 +141,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 7px 20px;
     position: relative;
     background-color: var(--accent);
-    border-bottom: 2px solid var(--border-bottom);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: auto;
 }
 
@@ -214,8 +215,8 @@ nav .tabs .tab-icon {
 
 nav .tabs .tab-icon .icon {
     margin-bottom: 10px;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     margin: auto;
     cursor: pointer;
     position: relative;
@@ -230,7 +231,7 @@ nav .tabs .tab-icon .icon img {
 nav .tabs .tab-icon.active::after {
     content: '';
     position: absolute;
-    bottom: -22px;
+    bottom: -13px;
     left: 0;
     width: 100%;
     border-bottom: 3px solid var(--border);
@@ -522,6 +523,7 @@ nav .right-side .user-icons .icon.has-notification::after {
     background-color: var(--accent);
     padding: 20px 20px 0 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .posts .create-post.smaller-margin,
@@ -582,7 +584,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 .posts .create-post .media .category .option span,
 .posts .create-post .upper span {
-    color: var(--font);
+    color: var(--black);
     margin-left: 8px;
     font-size: 0.88rem;
     font-weight: 500;
@@ -626,6 +628,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 .posts .view.view-post-container {
     padding-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .posts .view .profile::after {
@@ -650,7 +653,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 .posts .view .view-post .upper .d-flex .info h6 {
-    color: var(--white);
+    color: var(--black);
     font-size: 0.99rem;
     font-weight: 500;
     text-transform: capitalize;
@@ -710,7 +713,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 .posts .view .view-post .desc p {
-    color: var(--white);
+    color: var(--black);
     margin: 20px 0 10px 0;
     font-size: 00.88rem;
 }
@@ -799,6 +802,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 /* people you may know */
 .posts .view.friends {
     padding-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .posts .view .people .item {

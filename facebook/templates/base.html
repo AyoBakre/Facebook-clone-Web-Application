@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-    <script src="https://kit.fontawesome.com/40d3bba8ee.js" crossorigin="anonymous"></script>
     {% block head %}
     {% endblock head %}
+    
+    <script src="https://kit.fontawesome.com/40d3bba8ee.js" crossorigin="anonymous"></script>
     
     {% if title %}
         <title>Facebook - {{ title }}</title>
@@ -36,62 +37,63 @@
         <div class="tabs">
             <div class="tab-icon active">
                 <div class="icon">
-                    <img src="{{ url_for('static', filename='img/home.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/home.svg')}}" alt="">
                 </div>
             </div>
     
             <div class="tab-icon">
                 <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='img/flag.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/watch.png')}}" alt="">
                 </div>
             </div>
     
             <div class="tab-icon">
                 <div class="icon">
-                    <img src="{{ url_for('static', filename='img/tv.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/market.png')}}" alt="">
                 </div>
             </div>
     
             <div class="tab-icon">
                 <div class="icon">
-                    <img src="{{ url_for('static', filename='img/users.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/group.png')}}" alt="">
                 </div>
             </div>
     
     
             <div class="tab-icon">
                 <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='img/calendar.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/gaming.png')}}" alt="">
                 </div>
             </div>
         </div>
     
         <!--right side-->
         <div class="right-side">
-            <div class="user">
+            <a href="{{ url_for('profile')}}"><div class="user">
                 <div class="profile">
-                    <img src="{{ url_for('static', filename='img/hero.png')}}" alt="">
+                    <img src="{{ url_for('static', filename='profile_pics/default.jpg')}}" alt="">
                 </div>
                 <h4>{{ current_user.fname }}</h4>
-            </div>
+            </div></a>
+            
     
             <!--icons-->
             <div class="user-icons">
                 <div class="icon">
-                    <img src="{{ url_for('static', filename='img/plus.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/plus.png')}}" alt="">
                 </div>
     
                 <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='img/messenger.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/messenger.png')}}" alt="">
                 </div>
     
                 <div class="icon">
-                    <img src="{{ url_for('static', filename='img/bell.svg')}}" alt="">
+                    <img src="{{ url_for('static', filename='icons/bell.png')}}" alt="">
                 </div>
     
                 <div class="dropdown">
                     <div class="icon">
-                        <img class="drop_img" src="{{ url_for('static', filename='img/arrow.svg')}}" alt="" onclick="myFunction()">
+                        <img class="drop_img" src="{{ url_for('static', filename='icons/arrow-down.jpg')}}" alt="" onclick="myFunction()">
                     </div>
                     <div id="myDropdown" class="dropdown-content">
                             <a href="{{ url_for('logout')}}">Log Out</a>

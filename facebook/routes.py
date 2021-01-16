@@ -52,3 +52,11 @@ def logout():
 def home():
     return render_template('home.html', title='Homepage')
 
+
+@app.route("/profile")
+@login_required
+def profile():
+    profile_picture = url_for('static', filename='profile_pics/' + current_user.profile_img_file)
+    cover_picture = url_for('static', filename='back_drop_img/' + current_user.cover_img_file)
+    return render_template('profile.html', title=f" |{current_user.fname} {current_user.lname}", profile_picture=profile_picture, cover_picture=cover_picture)
+

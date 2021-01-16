@@ -9,16 +9,16 @@
                 <div class="menu-item">
                     <div class="user">
                         <div class="profile">
-                            <img src="{{ url_for('static', filename='img/hero.png')}}" alt="">
+                            <img src="{{ url_for('static', filename='profile_pics/default.jpg')}}" alt="">
                         </div>
-                        <h4>Ayomide</h4>
+                        <h4>{{ current_user.fname}} {{current_user.lname}}</h4>
                     </div>
                 </div>
     
                 <div class="menu-item">
                     <div class="item-row">
                         <div class="icon">
-                            <img src="{{ url_for('static', filename='img/shield.svg')}}" alt="">
+                            <img src="{{ url_for('static', filename='icons/shield.svg')}}" alt="">
                         </div>
                         <h4>COVID-19 Infromation Center </h4>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="menu-item">
                     <div class="item-row">
                         <div class="icon">
-                            <img src="{{ url_for('static', filename='img/colored-people.svg')}}" alt="">
+                            <img src="{{ url_for('static', filename='icons/colored-people.svg')}}" alt="">
                         </div>
                         <h4>Friends </h4>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="menu-item">
                     <div class="item-row">
                         <div class="icon">
-                            <img src="{{ url_for('static', filename='img/colored-messenger.svg')}}" alt="">
+                            <img src="{{ url_for('static', filename='icons/colored-messenger.svg')}}" alt="">
                         </div>
                         <h4>Messenger </h4>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="menu-item">
                     <div class="item-row">
                         <div class="icon">
-                            <img src="{{ url_for('static', filename='img/colored-flag.svg')}}" alt="">
+                            <img src="{{ url_for('static', filename='icons/colored-flag.svg')}}" alt="">
                         </div>
                         <h4>Pages </h4>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="menu-item">
                     <div class="item-row  border">
                         <div class="icon more">
-                            <img src="{{ url_for('static', filename='img/arrow-down.svg')}}" alt="">
+                            <img src="{{ url_for('static', filename='icons/arrow-down.jpg')}}" alt="">
                         </div>
                         <h4>see more </h4>
                     </div>
@@ -233,30 +233,30 @@
                     <div class="input">
                         <div class="user">
                             <div class="profile">
-                                <img src="{{ url_for('static', filename='img/hero.png')}}" alt="">
+                                <img src="{{ url_for('static', filename='profile_pics/default.jpg')}}" alt="">
                             </div>
                         </div>
-                        <input type="text" placeholder="What on your mind, Ayomide?" name="" id="">
+                        <input type="text" placeholder="What on your mind, {{current_user.fname}}?" name="" id="">
                     </div>
                     <div class="media">
                         <div class="category">
                             <div class="option">
                                 <div class="icon">
-                                    <img src="{{ url_for('static', filename='img/video-live.svg')}}" alt="">
+                                    <img src="{{ url_for('static', filename='icons/video-live.svg')}}" alt="">
                                 </div>
                                 <span>Live video</span>
                             </div>
     
                             <div class="option">
                                 <div class="icon">
-                                    <img src="{{ url_for('static', filename='img/photos.svg')}}" alt="">
+                                    <img src="{{ url_for('static', filename='icons/photos.svg')}}" alt="">
                                 </div>
                                 <span>photo/video</span>
                             </div>
     
                             <div class="option">
                                 <div class="icon">
-                                    <img src="{{ url_for('static', filename='img/smile.svg')}}" alt="">
+                                    <img src="{{ url_for('static', filename='icons/smile.svg')}}" alt="">
                                 </div>
                                 <span>feeling/activity</span>
                             </div>
@@ -268,7 +268,7 @@
                     <div class="upper">
                         <div class="title">
                             <div class="icon">
-                                <img src="{{ url_for('static', filename='img/video-room.svg')}}" alt="">
+                                <img src="{{ url_for('static', filename='icons/video-room.svg')}}" alt="">
                             </div>
                             <span>Rooms</span>
                         </div>

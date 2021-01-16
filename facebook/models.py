@@ -13,11 +13,18 @@ class User(db.Model, UserMixin):
     fname = db.Column(db.String(20), nullable=False)
     lname = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default="default.jpg")
+    profile_img_file = db.Column(db.String(20), nullable=False, default="default.jpg")
+    cover_img_file = db.Column(db.String(20), nullable=False, default="default.jpg")
     password = db.Column(db.String(60), nullable=False)
-    # dob = db.Column(db.Integer, nullable=True)
-    # gender = db.Column(db.String(6), nullable=True)
+    bio = db.Column(db.String(100), nullable=False, default="Add Bio")
+    dob = db.Column(db.Integer, nullable=True)
+    gender = db.Column(db.String(6), nullable=True)
+    school = db.Column(db.String(100), nullable=False, default="Add School")
+    location = db.Column(db.String(100), nullable=False, default="Add Location")
+    relationship = db.Column(db.String(100), nullable=False, default="Add Relationship Status")
     posts = db.relationship('Post', backref='author', lazy=True)
+    story = db.Column(db.String(20), nullable=True)
+
 
     def __repr__(self):
         return f"User('{self.fname}', '{self.lname}', '{self.email}') "
