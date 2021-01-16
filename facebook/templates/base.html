@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     <script src="https://kit.fontawesome.com/40d3bba8ee.js" crossorigin="anonymous"></script>
+    {% block head %}
+    {% endblock head %}
     
     {% if title %}
         <title>Facebook - {{ title }}</title>
@@ -70,7 +72,7 @@
                 <div class="profile">
                     <img src="{{ url_for('static', filename='img/hero.png')}}" alt="">
                 </div>
-                <h4>Ayomide</h4>
+                <h4>{{ current_user.fname }}</h4>
             </div>
     
             <!--icons-->
@@ -101,8 +103,6 @@
             
         </div>
     </nav>
-
-    
 
     {% block content %}
     {% endblock content %}

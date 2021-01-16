@@ -189,13 +189,12 @@ nav .left-side .search::before {
     height: 12px;
     width: 12px;
     padding: 2px;
-    background-image: url('../img/icons/search.svg');
+    background-image: url("/static/img/search.svg");
     background-size: contain;
     position: absolute;
     left: 12px;
     top: 14px;
 }
-
 
 /* nav tabs */
 nav .tabs {
@@ -946,3 +945,6 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+
