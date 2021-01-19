@@ -43,7 +43,7 @@ def index():
 @app.route("/logout")
 def logout():
     logout_user()
-    return  redirect(url_for('index'))
+    return redirect(url_for('index'))
 
 
 @app.route("/home")
@@ -58,5 +58,6 @@ def home():
 def profile():
     profile_picture = url_for('static', filename='profile_pics/' + current_user.profile_img_file)
     cover_picture = url_for('static', filename='back_drop_img/' + current_user.cover_img_file)
-    return render_template('profile.html', title=f" |{current_user.fname} {current_user.lname}", profile_picture=profile_picture, cover_picture=cover_picture)
+    bio = current_user.bio
+    return render_template('profile.html', title=f" |{current_user.fname} {current_user.lname}", profile_picture=profile_picture, cover_picture=cover_picture, bio=bio)
 
