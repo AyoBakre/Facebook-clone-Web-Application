@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 from facebook import app, db, bcrypt
-from facebook.forms import RegistrationForm, LoginForm
+from facebook.forms import RegistrationForm, LoginForm, UpdateProfile
 from facebook.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -59,5 +59,6 @@ def profile():
     profile_picture = url_for('static', filename='profile_pics/' + current_user.profile_img_file)
     cover_picture = url_for('static', filename='back_drop_img/' + current_user.cover_img_file)
     bio = current_user.bio
-    return render_template('profile.html', title=f" |{current_user.fname} {current_user.lname}", profile_picture=profile_picture, cover_picture=cover_picture, bio=bio)
+    form = UpdateProfile()
+    return render_template('profile.html', title=f" |{current_user.fname} {current_user.lname}", profile_picture=profile_picture, cover_picture=cover_picture, bio=bio, form=form)
 
