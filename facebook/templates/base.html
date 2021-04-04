@@ -1,116 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-    {% block head %}
-    {% endblock head %}
-    
-    <script src="https://kit.fontawesome.com/40d3bba8ee.js" crossorigin="anonymous"></script>
-    
-    {% if title %}
-        <title>Facebook - {{ title }}</title>
-    {% else %}
-        <title>Facebook</title>
-    {% endif %}
+{% extends 'bootstrap/base.html' %}
 
-</head>
-<body>
-    <!--navbar-->
-    <nav>
-        <!--logo and search-->
-        <div class="left-side">
-            <div class="logo">
-                <img src="{{ url_for('static', filename='img/fb_logo.svg')}}" alt="fb_logo">
-            </div>
-    
-            <div class="search">
-                <input type="text" placeholder="Search Facebook" name="" id="">
-            </div>
-        </div>
-    
-        <!--tab icons-->
-        <div class="tabs">
-            <div class="tab-icon active">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='icons/home.svg')}}" alt="">
-                </div>
-            </div>
-    
-            <div class="tab-icon">
-                <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='icons/watch.png')}}" alt="">
-                </div>
-            </div>
-    
-            <div class="tab-icon">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='icons/market.png')}}" alt="">
-                </div>
-            </div>
-    
-            <div class="tab-icon">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='icons/group.png')}}" alt="">
-                </div>
-            </div>
-    
-    
-            <div class="tab-icon">
-                <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='icons/gaming.png')}}" alt="">
-                </div>
-            </div>
-        </div>
-    
-        <!--right side-->
-        <div class="right-side">
-            <a href="{{ url_for('profile')}}"><div class="user">
-                <div class="profile">
-                    <img src="{{ url_for('static', filename='profile_pics/default.jpg')}}" alt="">
-                </div>
-                <h4>{{ current_user.fname }}</h4>
-            </div></a>
-            
-    
-            <!--icons-->
-            <div class="user-icons">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='icons/plus.png')}}" alt="">
-                </div>
-    
-                <div class="icon has-notification">
-                    <img src="{{ url_for('static', filename='icons/messenger.png')}}" alt="">
-                </div>
-    
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='icons/bell.png')}}" alt="">
-                </div>
-    
-                <div class="dropdown">
-                    <div class="icon">
-                        <img class="drop_img" src="{{ url_for('static', filename='icons/arrow-down.jpg')}}" alt="" onclick="myFunction()">
-                    </div>
-                    <div id="myDropdown" class="dropdown-content">
-                            <a href="{{ url_for('logout')}}">Log Out</a>
-                            <a href="#">Give feedback</a>
-                            <a href="#">help and support</a>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </nav>
+{% block title %}
+    {% if title %}{{ title }} - Facebook{% else %} Facebook{% endif %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock content %}
+{% block navbar %}
     
-    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
