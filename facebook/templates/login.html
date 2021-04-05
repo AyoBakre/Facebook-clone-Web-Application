@@ -11,10 +11,15 @@
 {% endblock %}
 
 {% block app_content %}
-    <h1>Sign Up</h1>
+    <h1>Sign In</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-7">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-7" style="background-color: red;">.col-sm-4</div>
+        <div class="col-sm-5" style="background-color: green;">.col-sm-8</div>
+      </div>
 {% endblock %}

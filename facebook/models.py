@@ -1,9 +1,10 @@
-from facebook import db
+from facebook import db, login
 from datetime import datetime
-from werkzeug.security import generate_password_hash
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     f_name = db.Column(db.String(64), index=True, nullable=False)
     l_name = db.Column(db.String(64), index=True, nullable=False)
@@ -15,5 +16,13 @@ class User(db.Model):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
