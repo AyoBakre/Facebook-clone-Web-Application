@@ -6,13 +6,91 @@
 
 {% block styles %}
 {{super()}}
-<link rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
+    
 {% endblock %}
 
 
 {% block navbar %}
-    
+    <!--navbar-->
+    <nav>
+        <!--logo and search-->
+        <div class="left-side">
+            <div class="logo">
+                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt=""></a>          
+            </div>
+
+            <div class="search">
+                <input type="text" placeholder="Search Facebook" name="" id="">
+            </div>
+        </div>
+
+        <!--tab icons-->
+        <div class="tabs">
+            <div class="tab-icon active">
+                <div class="icon">
+                    <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/home.svg')}}" alt=""></a>
+                </div>
+            </div>
+
+            <div class="tab-icon">
+                <div class="icon has-notification">
+                    <img src="{{url_for('static', filename='img/icons/flag.svg')}}" alt="">
+                </div>
+            </div>
+
+            <div class="tab-icon">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/tv.svg')}}" alt="">
+                </div>
+            </div>
+
+            <div class="tab-icon">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/users.svg')}}" alt="">
+                </div>
+            </div>
+
+
+            <div class="tab-icon">
+                <div class="icon has-notification">
+                    <img src="{{url_for('static', filename='img/icons/calendar.svg')}}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--right side-->
+        <div class="right-side">
+            <div class="user">
+                <div class="profile">
+                    <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                </div>
+                <h4>Anne</h4>
+            </div>
+
+            <!--icons-->
+            <div class="user-icons">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt="">
+                </div>
+
+                <div class="icon has-notification">
+                    <img src="{{url_for('static', filename='img/icons/messenger.svg')}}" alt="">
+                </div>
+
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/bell.svg')}}" alt="">
+                </div>
+
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/arrow.svg')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--navbar ends-->
 {% endblock %}
 
 {% block content %}
@@ -20,12 +98,26 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-            <div class="alert alert-info" role="alert">{{ message }}</div>
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>{{ message }}</strong>
+                </div>          
             {% endfor %}
         {% endif %}
         {% endwith %}
-
-        {# application content needs to be provided in the app_content block #}
-        {% block app_content %}{% endblock %}
     </div>
+    {# application content needs to be provided in the app_content block #}
+    {% block app_content %}{% endblock %}
+    
+{% endblock %}
+
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+
+<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+
 {% endblock %}

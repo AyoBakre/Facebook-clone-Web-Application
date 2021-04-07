@@ -11,15 +11,19 @@
 {% endblock %}
 
 {% block app_content %}
-    <h1>Sign In</h1>
+<div class="container">
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
+            <div>
+                <img src="{{ url_for('static', filename='img/icons/logo.svg')}}" alt="">
+                <h3>Facebook helps you connect and share <br> with the people in your life.</h3>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>Sign In</h1>
             {{ wtf.quick_form(form) }}
+            <p>Don't have an account?,<a href="{{url_for('register')}}"> click to Register!</a></p>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-sm-7" style="background-color: red;">.col-sm-4</div>
-        <div class="col-sm-5" style="background-color: green;">.col-sm-8</div>
-      </div>
+</div>
 {% endblock %}

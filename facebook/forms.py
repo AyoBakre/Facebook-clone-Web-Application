@@ -10,7 +10,7 @@ class RegistrationForm(FlaskForm):
     l_name = StringField('Last Name', validators=[DataRequired(), Length(min=2, max=20)], render_kw={"placeholder": "Last Name"})
     email = StringField('Email', validators=[DataRequired(), Email()], render_kw={"placeholder": "Email"})
     gender = RadioField('Gender', choices=[('male', 'Male'), ('female', 'Female')])
-    dob = DateField('Date of Birth', format='%Y-%m-%d')
+    dob = DateField('Date of Birth', format='%Y-%m-%d', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()], render_kw={"placeholder": "Password"})
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')], render_kw={"placeholder": "Confirm Password"})
     submit = SubmitField('Sign Up')

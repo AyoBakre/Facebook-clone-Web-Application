@@ -7,8 +7,9 @@ from werkzeug.urls import url_parse
 
 
 @app.route('/')
+@login_required
 def index():
-    return 'Hello world'
+    return render_template('index.html', title='Home Page')
 
 
 @app.route('/register', methods=['GET', 'POST'])

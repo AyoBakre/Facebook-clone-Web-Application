@@ -1,0 +1,653 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <!--content-->
+    <div class="wrapper">
+        <div class="shortcuts">
+            <div class="first-col">
+                <div class="menu-item">
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                        </div>
+                        <h4>Anne</h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/icons/shield.svg')}}" alt="">
+                        </div>
+                        <h4>COVID-19 Infromation Center </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/icons/colored-people.svg')}}" alt="">
+                        </div>
+                        <h4>Friends </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/icons/colored-messenger.svg')}}" alt="">
+                        </div>
+                        <h4>Messenger </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/icons/colored-flag.svg')}}" alt="">
+                        </div>
+                        <h4>Pages </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row  border">
+                        <div class="icon more">
+                            <img src="{{url_for('static', filename='img/icons/arrow-down.svg')}}" alt="">
+                        </div>
+                        <h4>see more </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="second-col">
+
+                <h6 class="title">
+                    your shortcuts
+                </h6>
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
+                        </div>
+                        <h4>Designers house </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
+                        </div>
+                        <h4>Script house </h4>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-row">
+                            <div class="icon">
+                                <img src="{{url_for('static', filename='img/stories/page-1.jpg')}}" alt="">
+                            </div>
+                            <h4>ui ux Designers workshop </h4>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-row">
+                            <div class="icon">
+                                <img src="{{url_for('static', filename='img/stories/st-3.jpeg')}}" alt="">
+                            </div>
+                            <h4>netflix movies recommends </h4>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-row">
+                            <div class="icon">
+                                <img src="{{url_for('static', filename='img/stories/page-2.jpg')}}" alt="">
+                            </div>
+                            <h4>the futur </h4>
+                        </div>
+                    </div>
+
+
+                    <div class="menu-item">
+                        <div class="item-row">
+                            <div class="icon">
+                                <img src="{{url_for('static', filename='img/stories/page-3.jpeg')}}" alt="">
+                            </div>
+                            <h4>aj smart </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--posts-->
+        <div class="posts">
+            <!-- stories -->
+            <div class="stories">
+                <div class="owl-controls">
+                    <div class="owl-nav">
+                        <div class="controllers nxtBtn">
+                            <img src="{{url_for('static', filename='img/icons/arrow-right.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme slider">
+                    <div class="item">
+                        <div class="overlay first">
+                            <div class="create">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt="">
+                                </div>
+                                <span>Create a Story</span>
+                            </div>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+
+                    <div class="item">
+                        <div class="overlay">
+                            <div class="person">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <h4> samantha john</h4>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+
+                    <div class="item">
+                        <div class="overlay">
+                            <div class="person">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <h4>Omar yassir</h4>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/stories/st-3.jpeg')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+
+                    <div class="item">
+                        <div class="overlay">
+                            <div class="person">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <h4>amanda cerny</h4>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/stories/st-4.jpg')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+
+                    <div class="item">
+                        <div class="overlay">
+                            <div class="person">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <h4>stacy lopez </h4>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+
+                    <div class="item">
+                        <div class="overlay">
+                            <div class="person">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/6.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <h4>joshua simon</h4>
+                        </div>
+                        <div class="story-image">
+                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+
+            <!--create post-->
+            <div class="timeline">
+                <div class="view create-post">
+                    <div class="input">
+                        <div class="user">
+                            <div class="profile">
+                                <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                            </div>
+                        </div>
+                        <input type="text" placeholder="What on your mind, Anne?" name="" id="">
+                    </div>
+                    <div class="media">
+                        <div class="category">
+                            <div class="option">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/video-live.svg')}}" alt="">
+                                </div>
+                                <span>Live video</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/photos.svg')}}" alt="">
+                                </div>
+                                <span>photo/video</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/smile.svg')}}" alt="">
+                                </div>
+                                <span>feeling/activity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-post view smaller-margin">
+                    <div class="upper">
+                        <div class="title">
+                            <div class="icon">
+                                <img src="{{url_for('static', filename='img/icons/video-room.svg')}}" alt="">
+                            </div>
+                            <span>Rooms</span>
+                        </div>
+                        <a href="">
+                            create
+                        </a>
+                    </div>
+
+                    <div class="owl-carousel owl-theme rooms">
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!--post container-->
+                <div class="view view-post-container smaller-margin">
+                    <div class="view-post">
+                        <div class="upper">
+                            <div class="d-flex">
+                                <div class="user">
+                                    <div class="profile">
+                                        <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="info">
+                                    <h6 class="name">
+                                        diana barry
+                                    </h6>
+                                    <span class="time">1 hour ago</span>
+                                </div>
+                            </div>
+
+                            <div class="dots">
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+
+                        <div class="desc">
+                            <p>Travellimg to the future 🌟 , it's alraedy 2020 🙋‍♂🌈🌴</p>
+                        </div>
+
+                        <div class="post-img">
+                            <img src="{{url_for('static', filename='img/posts/1.jpg')}}" alt="">
+                        </div>
+
+                        <div class="actions-container">
+                            <div class="action">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">
+                                </div>
+                                <span>
+                                    like
+                                </span>
+                            </div>
+
+                            <div class="action">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/comment.svg')}}" alt="">
+                                </div>
+                                <span>
+                                    comment
+                                </span>
+                            </div>
+
+                            <div class="action">
+                                <div class="icon">
+                                    <img src="{{url_for('static', filename='img/icons/share.svg')}}" alt="">
+                                </div>
+                                <span>
+                                    share
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="write-comment">
+                            <div class="user">
+                                <div class="profile">
+                                    <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                                </div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Write a comment" name="" id="">
+                                <div class="media">
+                                    <div class="icon">
+                                        <img src="{{url_for('static', filename='img/icons/camera.svg')}}" alt="">
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src="{{url_for('static', filename='img/icons/image.svg')}}" alt="">
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src="{{url_for('static', filename='img/icons/smile-2.svg')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--people you may know-->
+                <div class="view friends smaller-margin">
+                    <div class="upper">
+                        <h6>people you may know</h6>
+                        <div class="dots">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme people">
+                        <div class="item">
+                            <div class="person-img">
+                                <div class="icon">
+                                    &times;
+                                </div>
+                                <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h4>
+                                    rosie pie
+                                </h4>
+                                <span>4 mutual friend</span>
+                                <button>
+                                    add friend
+                                </button>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="person-img">
+                                <div class="icon">
+                                    &times;
+                                </div>
+                                <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h4>
+                                    sarah jones
+                                </h4>
+                                <span>4 mutual friend</span>
+                                <button>
+                                    add friend
+                                </button>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="person-img">
+                                <div class="icon">
+                                    &times;
+                                </div>
+                                <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h4>
+                                    chris doe
+                                </h4>
+                                <span>4 mutual friend</span>
+                                <button>
+                                    add friend
+                                </button>
+                            </div>
+                        </div>
+                        <!---->
+
+                        <div class="item">
+                            <div class="person-img">
+                                <div class="icon">
+                                    &times;
+                                </div>
+                                <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h4>
+                                    katie adam
+                                </h4>
+                                <span>4 mutual friend</span>
+                                <button>
+                                    add friend
+                                </button>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--shortcuts 2 -events and chat- -->
+        <div class="shortcuts shortcuts-2">
+            <div class="second-col first-col">
+                <div class="menu-item">
+                    <div class="upper">
+                        <h6>Your pages</h6>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
+                        </div>
+                        <h4>Script house </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon">
+                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
+                        </div>
+                        <h4>omar ui design </h4>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-row  border">
+                        <div class="icon more">
+                            <img src="{{url_for('static', filename='img/icons/arrow-down.svg')}}" alt="">
+                        </div>
+                        <h4>see more </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="second-col">
+
+                <h6 class="title">
+                    birthdays
+                </h6>
+                <div class="menu-item">
+                    <div class="item-row">
+                        <div class="icon not-rounded">
+                            <img src="{{url_for('static', filename='img/icons/gift.svg')}}" alt="">
+                        </div>
+                        <h4>it's diana berry's birthday </h4>
+                    </div>
+                </div>
+                <div class="online">
+                    <h6 class="title">
+                        contact
+                    </h6>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
+                        </div>
+                        <h4>diana berry</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                        </div>
+                        <h4>rosie pie</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                        </div>
+                        <h4>samantha jones</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
+                        </div>
+                        <h4>john doe</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
+                        </div>
+                        <h4>stacy jr.</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
+                        </div>
+                        <h4>christin sam</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/6.jpg')}}" alt="">
+                        </div>
+                        <h4>kate simon</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
+                        </div>
+                        <h4>diana berry</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                        </div>
+                        <h4>sarah cerny</h4>
+                    </div>
+
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
+                        </div>
+                        <h4>josh doe</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
