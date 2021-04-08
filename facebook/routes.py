@@ -1,15 +1,41 @@
 from flask import render_template, flash, redirect, url_for, request
 from facebook import app, db
-from facebook.models import User
-from facebook.forms import RegistrationForm, LoginForm
+from facebook.models import User, Post
+from facebook.forms import RegistrationForm, LoginForm, PostForm
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
+import secrets
+import os
+from PIL import Image
 
 
-@app.route('/')
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/img/posts', picture_fn)
+    output_size = (125, 125)
+    i = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(picture_path)
+
+    return picture_fn
+
+
+@app.route('/', methods=['GET', 'POST'])
 @login_required
 def index():
-    return render_template('index.html', title='Home Page')
+    form = PostForm()
+    posts = Post.query.order_by(Post.timestamp.desc())
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        post_image = save_picture(form.post_image.data)
+        post.post_image = post_image
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is now live!')
+        return redirect(url_for('index'))
+    return render_template('index.html', title='Home Page', form=form, posts=posts)
 
 
 @app.route('/register', methods=['GET', 'POST'])

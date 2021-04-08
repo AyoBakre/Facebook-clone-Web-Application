@@ -1,4 +1,15 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{super()}}
+    <style>
+        .control-label {
+            display: none;
+        }        
+    </style>
+{% endblock %}
+
 
 {% block app_content %}
     <!--content-->
@@ -235,7 +246,13 @@
                                 <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
                             </div>
                         </div>
-                        <input type="text" placeholder="What on your mind, Anne?" name="" id="">
+                        {% if form %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{ wtf.quick_form(form) }}
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="media">
                         <div class="category">
@@ -339,94 +356,10 @@
                         <!---->
                     </div>
                 </div>
-                <!--post container-->
-                <div class="view view-post-container smaller-margin">
-                    <div class="view-post">
-                        <div class="upper">
-                            <div class="d-flex">
-                                <div class="user">
-                                    <div class="profile">
-                                        <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="info">
-                                    <h6 class="name">
-                                        diana barry
-                                    </h6>
-                                    <span class="time">1 hour ago</span>
-                                </div>
-                            </div>
-
-                            <div class="dots">
-                                <div class="dot"></div>
-                            </div>
-                        </div>
-
-                        <div class="desc">
-                            <p>Travellimg to the future 🌟 , it's alraedy 2020 🙋‍♂🌈🌴</p>
-                        </div>
-
-                        <div class="post-img">
-                            <img src="{{url_for('static', filename='img/posts/1.jpg')}}" alt="">
-                        </div>
-
-                        <div class="actions-container">
-                            <div class="action">
-                                <div class="icon">
-                                    <img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">
-                                </div>
-                                <span>
-                                    like
-                                </span>
-                            </div>
-
-                            <div class="action">
-                                <div class="icon">
-                                    <img src="{{url_for('static', filename='img/icons/comment.svg')}}" alt="">
-                                </div>
-                                <span>
-                                    comment
-                                </span>
-                            </div>
-
-                            <div class="action">
-                                <div class="icon">
-                                    <img src="{{url_for('static', filename='img/icons/share.svg')}}" alt="">
-                                </div>
-                                <span>
-                                    share
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="write-comment">
-                            <div class="user">
-                                <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="Write a comment" name="" id="">
-                                <div class="media">
-                                    <div class="icon">
-                                        <img src="{{url_for('static', filename='img/icons/camera.svg')}}" alt="">
-                                    </div>
-
-                                    <div class="icon">
-                                        <img src="{{url_for('static', filename='img/icons/image.svg')}}" alt="">
-                                    </div>
-
-                                    <div class="icon">
-                                        <img src="{{url_for('static', filename='img/icons/smile-2.svg')}}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
+                <!--Post container-->
+                {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
                 <!--people you may know-->
                 <div class="view friends smaller-margin">
                     <div class="upper">
