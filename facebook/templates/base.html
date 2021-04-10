@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Facebook{% else %} Facebook{% endif %}
+    {% if title %}Facebook - {{ title }} {% else %} Facebook{% endif %}
 {% endblock %}
 
 {% block styles %}
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}"> 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
-    
+
 {% endblock %}
 
 
@@ -63,12 +63,14 @@
 
         <!--right side-->
         <div class="right-side">
+            <a href="{{url_for('user', username=current_user.username)}}">
             <div class="user">
                 <div class="profile">
                     <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
                 </div>
-                <h4>Anne</h4>
+                <h4>{{ current_user.f_name }}</h4>
             </div>
+            </a>
 
             <!--icons-->
             <div class="user-icons">

@@ -31,6 +31,16 @@ class LoginForm(FlaskForm):
 
 class PostForm(FlaskForm):
     post = TextAreaField('Say something', validators=[
-        DataRequired(), Length(min=1, max=140)])
+        DataRequired(), Length(min=1, max=140)], render_kw={"placeholder": "What's on your mind ?"})
     post_image = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Submit')
+
+
+class EditCoverForm(FlaskForm):
+    cover_image = FileField('Add Cover Photo', validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Submit')
+
+
+class EditProfilePictureForm(FlaskForm):
+    profile_image = FileField('Add Profile Photo', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Submit')

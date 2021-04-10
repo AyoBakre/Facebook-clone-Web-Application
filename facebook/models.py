@@ -8,15 +8,22 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     f_name = db.Column(db.String(64), index=True, nullable=False)
     l_name = db.Column(db.String(64), index=True, nullable=False)
+    username = db.Column(db.String(128), index=True, nullable=False)
     dob = db.Column(db.DateTime, nullable=True, index=True)
     gender = db.Column(db.String(6), index=True, nullable=True)
     email = db.Column(db.String(120), index=True, unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
+    cover_image = db.Column(db.String(20), default='default.jpeg')
+    profile_image = db.Column(db.String(20), default='default.jpg')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
-
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
+
+    def set_username(self, f_name, l_name):
+        self.username = f_name + '.' + l_name
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
