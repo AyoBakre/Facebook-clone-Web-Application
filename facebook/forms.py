@@ -36,11 +36,26 @@ class PostForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-class EditCoverForm(FlaskForm):
+class EditProfilePhotoForm(FlaskForm):
     cover_image = FileField('Add Cover Photo', validators=[FileAllowed(['jpg', 'png'])])
+    profile_image = FileField('Add Profile Photo', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Submit')
 
 
-class EditProfilePictureForm(FlaskForm):
-    profile_image = FileField('Add Profile Photo', validators=[FileAllowed(['jpg', 'png'])])
+class EditProfileForm(FlaskForm):
+    f_name = StringField('First Name', validators=[DataRequired()])
+    l_name = StringField('Last Name', validators=[DataRequired()])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Submit')
+
+
+class EditProfileDetailsForm(FlaskForm):
+    school = StringField('School', validators=[DataRequired()])
+    hometown = StringField('Home Town', validators=[DataRequired()])
+    location = StringField('Current Location', validators=[DataRequired()])
+    relationship = RadioField('Gender', choices=[('single', 'Single'), ('married', 'Married'), ('dating', 'Dating')])
+    submit = SubmitField('Submit')
+
+
+class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')

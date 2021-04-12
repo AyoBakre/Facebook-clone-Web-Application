@@ -1,38 +1,18 @@
 from flask import render_template, flash, redirect, url_for, request
 from facebook import app, db
 from facebook.models import User, Post
-from facebook.forms import RegistrationForm, LoginForm, PostForm, EditCoverForm, EditProfilePictureForm
+from facebook.forms import RegistrationForm, LoginForm, PostForm, EditProfilePhotoForm, EditProfileForm, EditProfileDetailsForm, EmptyForm
+from facebook.utilities import save_post_image, save_profile_picture, save_cover_image
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
-import secrets
-import os
-from PIL import Image
+from datetime import datetime
 
 
-def save_picture(form_picture):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/img/posts', picture_fn)
-    output_size = (800, 350)
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
-
-    return picture_fn
-
-
-def save_cover(form_picture):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/img/cover', picture_fn)
-    output_size = (940, 350)
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
-
-    return picture_fn
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -62,19 +42,60 @@ def index():
 @app.route('/<username>', methods=['GET', 'POST'])
 @login_required
 def user(username):
-    form = EditCoverForm()
-    form2 = EditProfilePictureForm()
+    form = EditProfilePhotoForm()
+    emptyform = EmptyForm()
     user = User.query.filter_by(username=username).first_or_404()
     posts = Post.query.order_by(Post.timestamp.desc()).all()
     if form.validate_on_submit():
-        cover_image = save_cover(form.cover_image.data)
-        profile_image = save_cover(form.profile_image.data)
+        cover_image = save_cover_image(form.cover_image.data)
+        profile_image = save_profile_picture(form.profile_image.data)
         user.cover_image = cover_image
         user.profile_image = profile_image
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('user', username=username))
-    return render_template('profile.html', user=user, posts=posts, title=username, form=form, form2=form2)
+    return render_template('profile.html', user=user, posts=posts, title=username, form=form, emptyform=emptyform)
+
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+    form = EditProfileForm()
+    if form.validate_on_submit():
+        current_user.f_name = form.f_name.data
+        current_user.l_name = form.l_name.data
+        current_user.set_username(form.f_name.data, form.l_name.data)
+        current_user.about_me = form.about_me.data
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('edit_profile'))
+    elif request.method == 'GET':
+        form.f_name.data = current_user.f_name
+        form.l_name.data = current_user.l_name
+        form.about_me.data = current_user.about_me
+    return render_template('edit_profile.html', title='Edit Profile',
+                           form=form)
+
+
+@app.route('/edit_profile_details', methods=['GET', 'POST'])
+@login_required
+def edit_profile_details():
+    form = EditProfileDetailsForm()
+    if form.validate_on_submit():
+        current_user.school = form.school.data
+        current_user.hometown = form.hometown.data
+        current_user.location = form.location.data
+        current_user.relationship = form.relationship.data
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('edit_profile_details'))
+    elif request.method == 'GET':
+        form.school.data = current_user.school
+        form.hometown.data = current_user.hometown
+        form.location.data = current_user.location
+        form.relationship.data = current_user.relationship
+    return render_template('edit_profile_details.html', title='Edit Profile Details',
+                           form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -115,3 +136,43 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.route('/follow/<username>', methods=['POST'])
+@login_required
+def follow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash('User {} not found.'.format(username))
+            return redirect(url_for('index'))
+        if user == current_user:
+            flash('You cannot follow yourself!')
+            return redirect(url_for('user', username=username))
+        current_user.follow(user)
+        db.session.commit()
+        flash('You are following {}!'.format(username))
+        return redirect(url_for('user', username=username))
+    else:
+        return redirect(url_for('index'))
+
+
+@app.route('/unfollow/<username>', methods=['POST'])
+@login_required
+def unfollow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash('User {} not found.'.format(username))
+            return redirect(url_for('index'))
+        if user == current_user:
+            flash('You cannot unfollow yourself!')
+            return redirect(url_for('user', username=username))
+        current_user.unfollow(user)
+        db.session.commit()
+        flash('You are not following {}.'.format(username))
+        return redirect(url_for('user', username=username))
+    else:
+        return redirect(url_for('index'))

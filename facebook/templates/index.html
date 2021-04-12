@@ -356,10 +356,12 @@
                         <!---->
                     </div>
                 </div>
+                
                 <!--Post container-->
                 {% for post in posts %}
-        {% include '_post.html' %}
-    {% endfor %}
+                    {% include '_post.html' %}
+                {% endfor %}
+    
                 <!--people you may know-->
                 <div class="view friends smaller-margin">
                     <div class="upper">
@@ -451,8 +453,24 @@
                         <!---->
                     </div>
                 </div>
+
             </div>
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous{% if not prev_url %} disabled{% endif %}">
+                        <a href="{{ prev_url or '#' }}">
+                            <span aria-hidden="true">&larr;</span> Newer posts
+                        </a>
+                    </li>
+                    <li class="next{% if not next_url %} disabled{% endif %}">
+                        <a href="{{ next_url or '#' }}">
+                            Older posts <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+        
 
         <!--shortcuts 2 -events and chat- -->
         <div class="shortcuts shortcuts-2">
@@ -582,5 +600,7 @@
             </div>
         </div>
     </div>
+
+    
 {% endblock %}
 
