@@ -22,6 +22,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     cover_image = db.Column(db.String(20), default='default.jpeg')
     profile_image = db.Column(db.String(20), default='default.jpg')
+    story_image = db.Column(db.String(20))
     about_me = db.Column(db.String(140), default='No Bio')
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     school = db.Column(db.String(140))

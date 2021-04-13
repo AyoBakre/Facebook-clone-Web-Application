@@ -117,9 +117,8 @@
 {% block scripts %}
 {{super()}}
 <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-
 <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
-
 <script src="{{url_for('static', filename='js/index.js')}}"></script>
+{{ moment.include_moment() }}
 
 {% endblock %}

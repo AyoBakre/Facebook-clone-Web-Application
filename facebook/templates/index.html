@@ -141,6 +141,7 @@
                     <div class="owl-nav">
                         <div class="controllers nxtBtn">
                             <img src="{{url_for('static', filename='img/icons/arrow-right.svg')}}" alt="">
+                            
                         </div>
                     </div>
                 </div>
@@ -151,26 +152,33 @@
                                 <div class="icon">
                                     <img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt="">
                                 </div>
-                                <span>Create a Story</span>
+                                
                             </div>
                         </div>
                         <div class="story-image">
-                            <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                            <span>Create a Story</span>
+                            {% if story_form %}
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            {{ wtf.quick_form(story_form) }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            <img src="{{ url_for('static', filename='img/avatar/hero.png') }}" alt="">
                         </div>
                     </div>
-                    <!---->
 
                     <div class="item">
                         <div class="overlay">
                             <div class="person">
                                 <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
+                                    <img src="{{ url_for('static', filename='img/avatar/2.jpg')}}" alt="">
                                 </div>
                             </div>
                             <h4> samantha john</h4>
                         </div>
                         <div class="story-image">
-                            <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
+                            <img src="{{ url_for('static', filename='img/stories/' + user.story_image) }}" alt="">
                         </div>
                     </div>
                     <!---->

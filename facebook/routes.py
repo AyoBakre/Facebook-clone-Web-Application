@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for, request
 from facebook import app, db
 from facebook.models import User, Post
-from facebook.forms import RegistrationForm, LoginForm, PostForm, EditProfilePhotoForm, EditProfileForm, EditProfileDetailsForm, EmptyForm
-from facebook.utilities import save_post_image, save_profile_picture, save_cover_image
+from facebook.forms import RegistrationForm, LoginForm, PostForm, EditProfilePhotoForm, EditProfileForm, EditProfileDetailsForm, EmptyForm, EditStoryForm
+from facebook.utilities import save_post_image, save_profile_picture, save_cover_image, save_story_image
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
@@ -19,6 +19,8 @@ def before_request():
 @login_required
 def index():
     form = PostForm()
+    story_form = EditStoryForm()
+    user = User.query.filter_by(username=current_user.username).first_or_404()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
@@ -29,14 +31,22 @@ def index():
     if form.validate_on_submit():
         post = Post(body=form.post.data, author=current_user)
         if form.post_image.data is not None:
-            post_image = save_picture(form.post_image.data)
+            post_image = save_post_image(form.post_image.data)
             post.post_image = post_image
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
+    elif story_form.validate_on_submit():
+        story_image = save_story_image(story_form.story_image.data)
+        current_user.story_image = story_image
+        db.session.add(current_user)
+        db.session.commit()
+        flash('Your story is now live!')
+        return redirect(url_for('index'))
+
     return render_template('index.html', title='Home Page', form=form, posts=posts.items,
-                           next_url=next_url, prev_url=prev_url)
+                           next_url=next_url, prev_url=prev_url, story_form=story_form, user=user)
 
 
 @app.route('/<username>', methods=['GET', 'POST'])

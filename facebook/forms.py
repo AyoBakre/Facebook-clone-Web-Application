@@ -42,6 +42,11 @@ class EditProfilePhotoForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class EditStoryForm(FlaskForm):
+    story_image = FileField('Add Story', validators=[DataRequired(), FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Submit')
+
+
 class EditProfileForm(FlaskForm):
     f_name = StringField('First Name', validators=[DataRequired()])
     l_name = StringField('Last Name', validators=[DataRequired()])
