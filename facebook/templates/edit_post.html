@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{super()}}
+    <style>
+        .control-label {
+            display: none;
+        }       
+    </style>
+{% endblock %}
+
+{% block app_content %}
+<div class="container">
+    <h1>Edit Post</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <a href="{{url_for('index')}}">Back</a>
+</div>
+{% endblock %}

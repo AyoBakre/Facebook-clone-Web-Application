@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+
 {% block styles %}
 {{super()}}
     <style>
@@ -366,7 +367,7 @@
                 </div>
                 
                 <!--Post container-->
-                {% for post in posts %}
+                {% for post in posts.items %}
                     {% include '_post.html' %}
                 {% endfor %}
     
@@ -470,6 +471,20 @@
                             <span aria-hidden="true">&larr;</span> Newer posts
                         </a>
                     </li>
+
+                    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                        {% if page_num %}
+                        {% if posts.page_num == page_num %}
+                            <a class="btn btn-info mb-4 active" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                        {% else %}
+                        <a class="btn btn-outline-info mb-4" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                        
+                        {% endif %}
+                        {% else  %}
+                            ...
+                        {% endif %}
+                    {% endfor %}
+
                     <li class="next{% if not next_url %} disabled{% endif %}">
                         <a href="{{ next_url or '#' }}">
                             Older posts <span aria-hidden="true">&rarr;</span>
@@ -611,4 +626,3 @@
 
     
 {% endblock %}
-
