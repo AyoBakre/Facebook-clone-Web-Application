@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms.fields.html5 import DateField
-from wtforms import StringField, PasswordField, SubmitField, RadioField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, RadioField, BooleanField, TextAreaField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_wtf.file import FileField, FileAllowed
 from facebook.models import User
@@ -70,4 +70,27 @@ class EditProfileDetailsForm(FlaskForm):
 
 
 class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
+
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField('comment', validators=[
+        DataRequired(), Length(min=1, max=140)], render_kw={"placeholder": "Write a Comment"})
+    submit = SubmitField('Submit')
+
+
+class LikeForm(FlaskForm):
+    like = TextAreaField('comment', validators=[
+        DataRequired(), Length(min=1, max=140)], render_kw={"placeholder": "Write a Comment"})
+    submit = SubmitField('Submit')
+
+
+class MessageForm(FlaskForm):
+    message = TextAreaField('Message', validators=[DataRequired(), Length(min=0, max=140)], render_kw={"placeholder": "Type your message"})
+    image = FileField('Add Photo', validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Submit')
+
+
+class RecipientList(FlaskForm):
+    recipient = SelectField('Select the recipient', validators=[DataRequired()])
     submit = SubmitField('Submit')

@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}"> 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
-
+    
 {% endblock %}
 
 
 {% block navbar %}
     <!--navbar-->
+    {% if current_user.is_authenticated %}
     <nav>
+
         <!--logo and search-->
         <div class="left-side">
             <div class="logo">
@@ -36,14 +38,8 @@
             </div>
 
             <div class="tab-icon">
-                <div class="icon has-notification">
-                    <img src="{{url_for('static', filename='img/icons/flag.svg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="tab-icon">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/tv.svg')}}" alt="">
+                    <img src="{{url_for('static', filename='img/icons/flag.svg')}}" alt="">
                 </div>
             </div>
 
@@ -52,13 +48,13 @@
                     <img src="{{url_for('static', filename='img/icons/users.svg')}}" alt="">
                 </div>
             </div>
-
-
+            <a href="{{url_for('messaging')}}">
             <div class="tab-icon">
-                <div class="icon has-notification">
-                    <img src="{{url_for('static', filename='img/icons/calendar.svg')}}" alt="">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/chat.png')}}" alt="">
                 </div>
             </div>
+        </a>
         </div>
 
         <!--right side-->
@@ -66,33 +62,58 @@
             <a href="{{url_for('user', username=current_user.username)}}">
             <div class="user">
                 <div class="profile">
-                    <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                    <img src="{{url_for('static', filename='img/avatar/' + current_user.profile_image)}}" alt="">
                 </div>
                 <h4>{{ current_user.f_name }}</h4>
             </div>
             </a>
 
             <!--icons-->
+            <a href="{{ url_for('messages') }}">
             <div class="user-icons">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt="">
-                </div>
-
-                <div class="icon has-notification">
                     <img src="{{url_for('static', filename='img/icons/messenger.svg')}}" alt="">
-                </div>
-
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/bell.svg')}}" alt="">
-                </div>
-
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/arrow.svg')}}" alt="">
+                    {% set new_messages = current_user.new_messages() %}
+                            {% if new_messages %}
+                            <span class="badge">{{ new_messages }}</span>
+                            {% endif %}
                 </div>
             </div>
+            
+            </a>
+           <a href="{{url_for('logout')}}"> <div class="user-icons">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/logout.png')}}" alt="">
+                </div>
+            </div></a>
         </div>
     </nav>
     <!--navbar ends-->
+    {% else %}
+    <nav>
+
+        <!--logo and search-->
+        <div class="left-side">
+            <div class="logo">
+                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt=""></a>          
+            </div>
+        </div>
+        <div class="right-side">
+
+            <!--icons-->
+           <a href="{{url_for('login')}}"><div class="user-icons">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/login.png')}}" alt="">
+                </div>
+            </div></a>
+           <a href="{{url_for('register')}}"> <div class="user-icons">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='img/icons/register.png')}}" alt="">
+                </div>
+            </div></a>
+        </div>
+    </nav>
+    {% endif %}
 {% endblock %}
 
 {% block content %}

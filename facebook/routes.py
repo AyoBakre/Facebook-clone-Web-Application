@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for, request
 from facebook import app, db
-from facebook.models import User, Post
-from facebook.forms import RegistrationForm, LoginForm, PostForm, EditProfilePhotoForm, EditProfileForm, EditProfileDetailsForm, EmptyForm, EditStoryForm, EditPostForm
-from facebook.utilities import save_post_image, save_profile_picture, save_cover_image, save_story_image
+from facebook.models import User, Post, Comment, Story, Like, Message
+from facebook.forms import RegistrationForm, LoginForm, PostForm, EditProfilePhotoForm, EditProfileForm, MessageForm, RecipientList, EditProfileDetailsForm, EmptyForm, EditStoryForm, EditPostForm, CommentForm
+from facebook.utilities import save_post_image, save_profile_picture, save_cover_image, save_story_image, save_message_image
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
@@ -19,8 +19,8 @@ def before_request():
 @login_required
 def index():
     form = PostForm()
-    story_form = EditStoryForm()
     user = User.query.filter_by(username=current_user.username).first_or_404()
+    stories = Story.query.all()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
@@ -37,16 +37,23 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
-    elif story_form.validate_on_submit():
-        story_image = save_story_image(story_form.story_image.data)
-        current_user.story_image = story_image
-        db.session.add(current_user)
+    return render_template('index.html', title='Home Page', form=form, posts=posts,
+                           next_url=next_url, prev_url=prev_url, user=user, stories=stories)
+
+
+@app.route('/story', methods=['GET', 'POST'])
+@login_required
+def story():
+    form = EditStoryForm()
+    if form.validate_on_submit():
+        story_image = save_story_image(form.story_image.data)
+        story_post = Story(story_image=story_image, author=current_user)
+        db.session.add(story_post)
         db.session.commit()
         flash('Your story is now live!')
         return redirect(url_for('index'))
-
-    return render_template('index.html', title='Home Page', form=form, posts=posts,
-                           next_url=next_url, prev_url=prev_url, story_form=story_form, user=user)
+    flash('Your comment has been published.')
+    return render_template('story.html', title='Add Story', form=form)
 
 
 @app.route('/<username>', methods=['GET', 'POST'])
@@ -86,12 +93,36 @@ def edit_post(id):
     return render_template('edit_post.html', form=form)
 
 
+@app.route('/post/<int:id>', methods=['GET', 'POST'])
+@login_required
+def post(id):
+    post = Post.query.get_or_404(id)
+    form = CommentForm()
+    page = request.args.get('page', 1, type=int)
+    comments = Comment.query.filter_by(post_id=post.id).order_by(Comment.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('post', page=comments.next_num) \
+        if comments.has_next else None
+    prev_url = url_for('post', page=comments.prev_num) \
+        if comments.has_prev else None
+    if form.validate_on_submit():
+        comment = Comment(body=form.comment.data,
+                          post=post,
+                          author=current_user)
+        db.session.add(comment)
+        db.session.commit()
+        flash('Your comment has been published.')
+        return redirect(url_for('post', id=post.id))
+    return render_template('post.html', form=form, post=post, comments=comments, next_url=next_url, prev_url=prev_url)
+
+
 @app.route('/<username>/followers')
 @login_required
 def followers(username):
     user = User.query.filter_by(username=username).first_or_404()
-    fllowers = user.followers.all()
-    return render_template('followers.html', fllowers=fllowers)
+    folowers = user.followers.all()
+    foloweds = user.followed.all()
+    return render_template('followers.html', folowers=folowers, foloweds=foloweds, user=user)
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
@@ -213,3 +244,85 @@ def unfollow(username):
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
+
+
+@app.route('/send_message/<recipient>', methods=['GET', 'POST'])
+@login_required
+def send_message(recipient):
+    user = User.query.filter_by(username=recipient).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = Message(author=current_user, recipient=user,
+                      body=form.message.data)
+        if form.image.data is not None:
+            image = save_message_image(form.image.data)
+            msg.image = image
+        db.session.add(msg)
+        db.session.commit()
+        flash('Your message has been sent.')
+        return redirect(url_for('user', username=recipient))
+    return render_template('send_message.html', title='Send Message',
+                           form=form, user=user)
+
+
+@app.route('/messages')
+@login_required
+def messages():
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type=int)
+    messages = current_user.messages_received.order_by(
+        Message.timestamp.desc()).paginate(
+            page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.messages', page=messages.next_num) \
+        if messages.has_next else None
+    prev_url = url_for('main.messages', page=messages.prev_num) \
+        if messages.has_prev else None
+
+    return render_template('messages.html', messages=messages.items,
+                           next_url=next_url, prev_url=prev_url)
+
+
+@app.route('/messaging', methods=['GET', 'POST'])
+@login_required
+def messaging():
+    folowers = User.query.filter_by(username=current_user.username).first().followers.all()
+    foloweds = User.query.filter_by(username=current_user.username).first().followed.all()
+    form = RecipientList()
+    form.recipient.choices = []
+    for i in folowers:
+        form.recipient.choices.append(i.username)
+    for i in foloweds:
+        form.recipient.choices.append(i.username)
+    if form.validate_on_submit():
+        return redirect(url_for('send_message', recipient=form.recipient.data))
+    return render_template('send_message.html', title='Send Message', form=form)
+
+
+@app.route('/like/<int:post_id>/<action>')
+@login_required
+def like_action(post_id, action):
+    post = Post.query.filter_by(id=post_id).first_or_404()
+    if action == 'like':
+        current_user.like_post(post)
+        db.session.commit()
+    if action == 'unlike':
+        current_user.unlike_post(post)
+        db.session.commit()
+    return redirect(url_for('index'))
+
+
+'''message_form = MessageForm()
+    if message_form.validate_on_submit():
+        user = User.query.filter_by(username=form.recipient.data).first_or_404()
+        msg = Message(author=current_user, recipient=user,
+                      body=form.message.data)
+        if form.image.data is not None:
+            image = save_message_image(form.image.data)
+            msg.image = image
+        db.session.add(msg)
+        db.session.commit()
+        flash('Your message has been sent.')
+        return redirect(url_for('user', username=recipient))
+    return render_template('send_message.html', title='Send Message',
+                           form=form, message_form=message_form)'''

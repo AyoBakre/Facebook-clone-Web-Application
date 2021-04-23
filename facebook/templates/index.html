@@ -136,116 +136,50 @@
 
         <!--posts-->
         <div class="posts">
-            <!-- stories -->
-            <div class="stories">
-                <div class="owl-controls">
-                    <div class="owl-nav">
-                        <div class="controllers nxtBtn">
-                            <img src="{{url_for('static', filename='img/icons/arrow-right.svg')}}" alt="">
-                            
-                        </div>
+         
+<!-- stories -->
+<div class="stories">
+    <div class="owl-controls">
+        <div class="owl-nav">
+            <div class="controllers nxtBtn">
+                <img src="{{url_for('static', filename='img/icons/arrow-right.svg')}}  " alt="">
+            </div>
+        </div>
+    </div>
+    <div class="owl-carousel owl-theme slider">
+        <div class="item">
+            <div class="overlay first">
+                <div class="create">
+                    <div class="icon">
+                        <a href="{{url_for('story')}}"><img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt=""></a>
                     </div>
-                </div>
-                <div class="owl-carousel owl-theme slider">
-                    <div class="item">
-                        <div class="overlay first">
-                            <div class="create">
-                                <div class="icon">
-                                    <img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt="">
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="story-image">
-                            <span>Create a Story</span>
-                            {% if story_form %}
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            {{ wtf.quick_form(story_form) }}
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            <img src="{{ url_for('static', filename='img/avatar/hero.png') }}" alt="">
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <div class="person">
-                                <div class="profile">
-                                    <img src="{{ url_for('static', filename='img/avatar/2.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <h4> samantha john</h4>
-                        </div>
-                        <div class="story-image">
-                            <img src="{{ url_for('static', filename='img/stories/' + user.story_image) }}" alt="">
-                        </div>
-                    </div>
-                    <!---->
-
-                    <div class="item">
-                        <div class="overlay">
-                            <div class="person">
-                                <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <h4>Omar yassir</h4>
-                        </div>
-                        <div class="story-image">
-                            <img src="{{url_for('static', filename='img/stories/st-3.jpeg')}}" alt="">
-                        </div>
-                    </div>
-                    <!---->
-
-                    <div class="item">
-                        <div class="overlay">
-                            <div class="person">
-                                <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <h4>amanda cerny</h4>
-                        </div>
-                        <div class="story-image">
-                            <img src="{{url_for('static', filename='img/stories/st-4.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <!---->
-
-                    <div class="item">
-                        <div class="overlay">
-                            <div class="person">
-                                <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <h4>stacy lopez </h4>
-                        </div>
-                        <div class="story-image">
-                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
-                        </div>
-                    </div>
-                    <!---->
-
-                    <div class="item">
-                        <div class="overlay">
-                            <div class="person">
-                                <div class="profile">
-                                    <img src="{{url_for('static', filename='img/avatar/6.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <h4>joshua simon</h4>
-                        </div>
-                        <div class="story-image">
-                            <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
-                        </div>
-                    </div>
-                    <!---->
+                    <a href="{{url_for('story')}}"><span>Create a Story</span></a> 
                 </div>
             </div>
-
+            <div class="story-image">
+                <img src="{{url_for('static', filename='img/avatar/' +current_user.profile_image)}}" alt="">
+            </div>
+        </div>
+        <!---->
+        
+        {% for story in stories %}
+        <div class="item">
+            <div class="overlay">
+                <div class="person">
+                    <div class="profile">
+                        <img src="{{url_for('static', filename='img/avatar/' + story.author.profile_image)}}" alt="">
+                    </div>
+                </div>
+                <h4> {{story.author.f_name}} {{story.author.l_name}} </h4>
+            </div>
+            <div class="story-image">
+                <img src="{{url_for('static', filename='img/stories/' + story.story_image)}}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+        <!---->
+    </div>
+</div>
             <!--create post-->
             <div class="timeline">
                 <div class="view create-post">

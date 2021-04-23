@@ -6,7 +6,10 @@
     <style>
         .control-label {
             display: none;
-        }        
+        }    
+        body{
+            color: var(--white)
+        }    
     </style>
 {% endblock %}
 
@@ -21,7 +24,9 @@
         </div>
         <div class="col-md-6">
             <h1>Sign In</h1>
+            <hr>
             {{ wtf.quick_form(form) }}
+            <br>
             <p>Don't have an account?,<a href="{{url_for('register')}}"> click to Register!</a></p>
         </div>
     </div>

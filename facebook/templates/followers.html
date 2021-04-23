@@ -1,4 +1,29 @@
-<ul>
-    {% %}
-    <li>{{fllowers}}</li>
-</ul>
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block app_content %} 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Followers: </h1>
+            <ul>
+                {% for folower in folowers %}
+                <li>{{folower.username}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h1>Followed By: </h1>
+            <ul>
+                {% for folowed in foloweds %}
+                <li>{{folowed.username}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a href="{{url_for('user', username=user.username)}}">Back</a>
+</div>
+
+{% endblock %}
