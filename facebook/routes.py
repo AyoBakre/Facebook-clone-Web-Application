@@ -22,7 +22,7 @@ def index():
     user = User.query.filter_by(username=current_user.username).first_or_404()
     stories = Story.query.all()
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+    posts = current_user.followed_posts().paginate(
         page, app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('index', page=posts.next_num) \
         if posts.has_next else None
@@ -39,6 +39,21 @@ def index():
         return redirect(url_for('index'))
     return render_template('index.html', title='Home Page', form=form, posts=posts,
                            next_url=next_url, prev_url=prev_url, user=user, stories=stories)
+
+
+@app.route('/explore')
+@login_required
+def explore():
+    stories = Story.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('index', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('index', page=posts.prev_num) \
+        if posts.has_prev else None
+
+    return render_template('explore.html', title='Explore Page',  next_url=next_url, prev_url=prev_url,  stories=stories, posts=posts)
 
 
 @app.route('/story', methods=['GET', 'POST'])
@@ -312,17 +327,10 @@ def like_action(post_id, action):
     return redirect(url_for('index'))
 
 
-'''message_form = MessageForm()
-    if message_form.validate_on_submit():
-        user = User.query.filter_by(username=form.recipient.data).first_or_404()
-        msg = Message(author=current_user, recipient=user,
-                      body=form.message.data)
-        if form.image.data is not None:
-            image = save_message_image(form.image.data)
-            msg.image = image
-        db.session.add(msg)
-        db.session.commit()
-        flash('Your message has been sent.')
-        return redirect(url_for('user', username=recipient))
-    return render_template('send_message.html', title='Send Message',
-                           form=form, message_form=message_form)'''
+@app.route('/users')
+@login_required
+def users():
+    users = User.query.all()
+    return render_template('users.html', users=users)
+
+
