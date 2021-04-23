@@ -44,6 +44,8 @@ def index():
 @app.route('/explore')
 @login_required
 def explore():
+    form=EmptyForm()
+    users = User.query.all()
     stories = Story.query.all()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
@@ -52,8 +54,7 @@ def explore():
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
-
-    return render_template('explore.html', title='Explore Page',  next_url=next_url, prev_url=prev_url,  stories=stories, posts=posts)
+    return render_template('explore.html', title='Explore Page',  next_url=next_url, prev_url=prev_url,  stories=stories, posts=posts, form=form, users=users)
 
 
 @app.route('/story', methods=['GET', 'POST'])
@@ -106,6 +107,15 @@ def edit_post(id):
     elif request.method == 'GET':
         form.post.data = post.body
     return render_template('edit_post.html', form=form)
+
+
+@app.route('/delete_post/<int:id>/', methods=['GET', 'POST'])
+def delete_post(id):
+    post = Post.query.get_or_404(id)
+    db.session.delete(post)
+    db.session.commit()
+    flash('The post has been deleted.')
+    return redirect(url_for('index'))
 
 
 @app.route('/post/<int:id>', methods=['GET', 'POST'])
@@ -330,7 +340,10 @@ def like_action(post_id, action):
 @app.route('/users')
 @login_required
 def users():
+    form=EmptyForm()
     users = User.query.all()
-    return render_template('users.html', users=users)
+    return render_template('users.html', users=users, form=form)
+
+'''return redirect(request.referrer)'''
 
 
