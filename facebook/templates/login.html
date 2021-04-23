@@ -28,6 +28,10 @@
             {{ wtf.quick_form(form) }}
             <br>
             <p>Don't have an account?,<a href="{{url_for('register')}}"> click to Register!</a></p>
+            <p>
+                Forgot Your Password?
+                <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+            </p>
         </div>
     </div>
 </div>

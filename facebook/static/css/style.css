@@ -120,7 +120,7 @@ a {
 .item-row h4 {
     color: var(--white);
     font-weight: 400;
-    font-size: 0.88rem;
+    font-size: 14px;
     margin: 10px;
     text-transform: capitalize;
 }
@@ -179,7 +179,7 @@ nav .left-side .search input {
     padding: 14px;
     background-color: transparent;
     color: var(--placeholder);
-    font-size: 0.80rem;
+    font-size: 14px;
     font-family: Poppins;
 }
 
@@ -192,7 +192,7 @@ nav .left-side .search::before {
     background-size: contain;
     position: absolute;
     left: 12px;
-    top: 14px;
+    top: 18px;
 }
 
 
@@ -302,82 +302,16 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 /* content -shortcuts and content- */
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     height: auto;
     padding: 20px 25px;
-    flex-wrap: nowrap;
     width: 100%;
-}
-
-.wrapper .shortcuts {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-
-.wrapper .shortcuts .menu-item {
-    width: 100%;
-    margin-left: 0;
-}
-
-.wrapper .shortcuts .menu-item .user .profile {
-    height: 35px;
-    width: 35px;
-}
-
-.wrapper .shortcuts .menu-item .item-row h4 {
-    margin: 5px;
-}
-
-.wrapper .shortcuts .first-col .menu-item:last-of-type .item-row .icon {
-    background-color: var(--lighter);
-    border-radius: 50%;
     justify-content: center;
-    align-items: center;
-    margin-right: 5px;
 }
-
-.wrapper .shortcuts .first-col .menu-item:last-of-type .item-row {
-    border-bottom: 1px solid var(--border-bottom);
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    width: 250px
-}
-
-.wrapper .shortcuts .first-col .menu-item:last-of-type .item-row .icon img {
-    height: 40%;
-    width: 40%;
-}
-
-.wrapper .shortcuts .first-col .menu-item:last-of-type .item-row h4 {
-    margin-top: 8px;
-}
-
-.wrapper .shortcuts .second-col .menu-item {
-    margin-bottom: 18px;
-}
-
-.wrapper .shortcuts .second-col .menu-item .item-row .icon {
-    height: 35px;
-    width: 35px;
-    margin-right: 5px;
-    border-radius: 10px;
-}
-
-.wrapper .shortcuts .second-col .menu-item .item-row .icon img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
 
 /* strories and events */
 .posts {
-    width: 50%;
+    width: 70%;
     padding: 0 30px;
     position: relative;
 }
@@ -387,7 +321,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 .posts .stories .item {
-    height: 32vh;
+    height: 45vh;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -432,7 +366,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .stories .item .overlay h4 {
     color: var(--white);
     font-weight: 500;
-    font-size: 0.88rem;
+    font-size: 0.14px;
     width: 80%;
     margin-left: 5px;
 }
@@ -464,7 +398,7 @@ nav .right-side .user-icons .icon.has-notification::after {
     color: var(--white);
     display: block;
     height: 100%;
-    font-size: 0.99rem;
+    font-size: 14px;
     padding-top: 20px;
 }
 
@@ -533,6 +467,7 @@ nav .right-side .user-icons .icon.has-notification::after {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .posts .create-post .input input {
@@ -543,51 +478,9 @@ nav .right-side .user-icons .icon.has-notification::after {
     width: 100%;
     margin-left: 10px;
     color: var(--placeholder);
-    font-size: 0.88rem;
+    font-size: 14px;
 }
 
-.posts .create-post .media {
-    border-top: 2px solid var(--border-bottom);
-    padding: 20px 30px;
-    margin-top: 20px;
-}
-
-.posts .create-post .media .category,
-.posts .create-post .upper .title,
-.posts .create-post .media .category .option {
-    display: flex;
-    align-items: center;
-}
-
-.posts .create-post .media .category {
-    justify-content: space-between;
-}
-
-.posts .create-post .media .category .option .icon,
-.posts .create-post .upper .title .icon {
-    height: 25px;
-    width: 25px;
-}
-
-.posts .create-post .media .category .option:nth-child(2) .icon {
-    height: 20px;
-    width: 20px;
-}
-
-.posts .create-post .media .category .option .icon img,
-.posts .create-post .upper .title .icon img {
-    height: 100%;
-    width: 100%;
-}
-
-.posts .create-post .media .category .option span,
-.posts .create-post .upper span {
-    color: var(--font);
-    margin-left: 8px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    text-transform: capitalize;
-}
 
 .posts .view .upper {
     display: flex;
@@ -607,7 +500,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .view .upper a {
     color: var(--border);
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 16px;
     text-transform: capitalize;
 }
 
@@ -651,7 +544,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 .posts .view .view-post .upper .d-flex .info h6 {
     color: var(--white);
-    font-size: 0.99rem;
+    font-size: 14px;
     font-weight: 500;
     text-transform: capitalize;
 }
@@ -668,7 +561,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .view .upper h6,
 .shortcuts .upper h6 {
     color: var(--font);
-    font-size: 0.99rem;
+    font-size: 12px;
     text-transform: capitalize;
     font-weight: 500;
 }
@@ -712,7 +605,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .view .view-post .desc p {
     color: var(--white);
     margin: 20px 0 10px 0;
-    font-size: 00.88rem;
+    font-size: 16px;
 }
 
 .posts .view .view-post .post-img {
@@ -758,7 +651,7 @@ nav .right-side .user-icons .icon.has-notification::after {
     color: var(--font);
     margin-left: 10px;
     text-transform: capitalize;
-    font-size: 0.88rem;
+    font-size: 10px;
 }
 
 .posts .view .view-post .write-comment,
@@ -841,7 +734,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 .posts .view .people .item .info h4 {
-    font-size: 0.99rem;
+    font-size:12px;
     color: var(--font);
     text-transform: capitalize;
     font-weight: 600;
@@ -918,6 +811,9 @@ nav .right-side .user-icons .icon.has-notification::after {
 
     /*Header*/
 /*Header-top*/
+header{
+    background-color: var(--accent);
+}
 .header-container {
     margin: 0 auto;
     max-width: 940px;
