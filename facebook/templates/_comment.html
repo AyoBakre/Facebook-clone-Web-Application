@@ -1,0 +1,32 @@
+
+{% for comment in comments.items%}
+<!--post container-->
+<div class="view view-post-container smaller-margin">
+    <div class="view-post">
+        <div class="upper">
+            <div class="d-flex">
+                <div class="user">
+                    <div class="profile">
+                       <a href="{{ url_for('user', username=comment.author.username) }}"> 
+                           <img src="{{url_for('static', filename='img/avatar/' + comment.author.profile_image)}}" alt=""> </a>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h6 class="name">
+                       <a href="{{url_for('user', username=comment.author.username)}}"> {{ comment.author.f_name }} {{ comment.author.l_name }} </a>
+                    </h6>
+                    <span class="time">{{ moment(comment.timestamp).fromNow() }}</span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="desc">
+            {{ comment.body }}
+        </div>
+
+    </div>
+</div>
+{% endfor %}

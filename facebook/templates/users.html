@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles %}
+{{super()}}
+    <style>   
+        body{
+            color: var(--white)
+        }          
+    </style>
+{% endblock %}
+
+{% block app_content %} 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Discover Users: </h1>
+            <hr>
+            {% for user in users %}
+                <a href="{{url_for('user', username=user.username)}}"> <div class="online">
+    
+                    <div class="user">
+                        <div class="profile">
+                            <img src="{{url_for('static', filename='img/avatar/' +user.profile_image)}}" alt="">
+                        </div>
+                        <h4>{{user.f_name }} {{user.l_name}}</h4>
+                        
+                    </div>
+                    <br>
+                </div>
+            </a>
+            {% endfor %}
+        
+        </div>
+<!--people you may know-->
+<div class="view friends smaller-margin col-md-6">
+    <div class="upper">
+        <h6>people you may know</h6>
+         
+    </div>
+
+    <div class="owl-carousel owl-theme people">
+        {% for user in users %}
+        {% if user!= current_user%}
+        <div class="item">
+            <div class="person-img">
+                <div class="icon">
+                    &times;
+                </div>
+                <img src="{{url_for('static', filename='img/avatar/' + user.profile_image)}}" alt="">
+            </div>
+
+            <div class="info">
+                <h4>
+                    {{user.f_name}} {{user.l_name}}
+                </h4>
+
+                
+                {% if not current_user.is_following(user) and user != current_user %}
+                <button>
+                    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value='Follow', class_='btn btn-default') }}
+                    </form>
+                </button>
+                {% elif current_user.is_following(user) and user!= current_user %}
+            <button>
+                    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value='Unfollow', class_='btn btn-default') }}
+                    </form>
+                </button>
+                {% endif %}
+            </div>
+        </div>
+        <!---->
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+    </div>
+    
+
+    <a href="{{url_for('index')}}">Back</a>
+</div>
+
+{% endblock %}

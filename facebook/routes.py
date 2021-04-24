@@ -42,7 +42,7 @@ def index():
                            next_url=next_url, prev_url=prev_url, user=user, stories=stories)
 
 
-@app.route('/explore')
+@app.route('/explore', methods=['GET', 'POST'])
 @login_required
 def explore():
     form=EmptyForm()
@@ -142,7 +142,7 @@ def post(id):
     return render_template('post.html', form=form, post=post, comments=comments, next_url=next_url, prev_url=prev_url)
 
 
-@app.route('/<username>/followers')
+@app.route('/<username>/followers', methods=['GET', 'POST'])
 @login_required
 def followers(username):
     user = User.query.filter_by(username=username).first_or_404()
@@ -226,13 +226,13 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 
-@app.route('/follow/<username>', methods=['POST'])
+@app.route('/follow/<username>', methods=['GET', 'POST'])
 @login_required
 def follow(username):
     form = EmptyForm()
@@ -291,7 +291,7 @@ def send_message(recipient):
                            form=form, user=user)
 
 
-@app.route('/messages')
+@app.route('/messages', methods=['GET', 'POST'])
 @login_required
 def messages():
     current_user.last_message_read_time = datetime.utcnow()
@@ -325,7 +325,7 @@ def messaging():
     return render_template('send_message.html', title='Send Message', form=form)
 
 
-@app.route('/like/<int:post_id>/<action>')
+@app.route('/like/<int:post_id>/<action>', methods=['GET', 'POST'])
 @login_required
 def like_action(post_id, action):
     post = Post.query.filter_by(id=post_id).first_or_404()
@@ -338,7 +338,7 @@ def like_action(post_id, action):
     return redirect(url_for('index'))
 
 
-@app.route('/users')
+@app.route('/users', methods=['GET', 'POST'])
 @login_required
 def users():
     form=EmptyForm()

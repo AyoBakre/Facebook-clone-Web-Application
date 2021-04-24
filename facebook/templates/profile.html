@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{super()}}
+<style>
+    body, a{
+        color: #ffff;
+        text-transform: capitalize;
+    }
+    .profile-pics{
+        width: 50px;
+        border-radius: 50%;
+    }
+    #post{
+        background-color: var(--accent);
+        border-radius: 20px ;
+        padding: 15px;
+    }
+    #post-image{
+        width: 300px;
+    }
+</style>
+   
+{% endblock %}
+
+
+{% block app_content %}
+<header>
+    <div class="header-top">
+        <div class="header-container cover">
+            <img class="cover-img" src= "{{url_for('static', filename='img/cover/' + user.cover_image)}}" alt="Default cover image">
+    
+            <span class="edit-cover-btn">
+                {% if user==current_user%}
+                {% if form %}
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ wtf.quick_form(form) }}
+                    </div>
+                </div>
+    {% endif %}
+    {%endif%}
+</span>
+            
+        </div>
+    </div>
+    <div class="empty">
+        <div id="profile">
+            <img class="profile-pic" src= "{{url_for('static', filename='img/avatar/' + user.profile_image)}}" alt="Default profile image">
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="content-container">
+            <div class="description">
+                <h2>{{user.f_name}} {{user.l_name}}</h2>
+                <p>{{ user.about_me }}</p>
+                {% if user == current_user %}
+                <a href="{{ url_for('edit_profile')}}">Edit</a>
+                {%endif%}
+                <a href="{{ url_for('followers', username=user.username)}}"><p>{{ user.followers.count() }} followers</a> | <a href="{{ url_for('followers', username=user.username)}}">{{ user.followed.count() }} following</a> 
+                    {% if user != current_user and user.is_following(current_user) %}
+                        | <span class="label label-default">Follows you</span>
+                    {% endif %}
+                </p>
+                
+                {% if not current_user.is_following(user) and user != current_user %}
+                <p>
+                    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value='Follow', class_='btn btn-default') }}
+                    </form>
+                </p>
+                {% elif current_user.is_following(user) and user!= current_user %}
+                <p>
+                    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value='Unfollow', class_='btn btn-default') }}
+                    </form>
+                </p>
+                {% endif %}
+                <p>Last seen on: {{ moment(user.last_seen).format('LLL') }}</p>
+                {% if user != current_user %}
+                <p>
+                    <a href="{{ url_for('send_message',
+                                        recipient=user.username) }}">
+                        Send a Private Message
+                    </a>
+                </p>
+                {% endif %}
+            </div>
+            <hr>
+            <div class="header-bar">
+                <ul class="header-nav">
+                    <li><a href="#" id="active">Posts</a></li>
+                    <li id="friends"><a href="{{ url_for('followers', username=user.username)}}">Friends</a></li>
+                    {%if user==current_user%}
+                    <a href="{{ url_for('edit_profile_details')}}"><span class="header-icons"><i class="fas fa-pen"></i> Edit Details</span></a>
+                    {%endif%}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="content-container">
+        <aside>
+            <div class="intro">
+                <h3>Intro</h3>
+                <p><i class="fas fa-graduation-cap"></i> Went to <strong>{{user.school}}</strong></p>
+                <p><i class="fas fa-house-user"></i> Lives in <strong>{{user.location}}</strong></p>
+                
+                <p><i class="fas fa-house-user"></i> From <strong>{{user.hometown}}</strong></p>
+                
+                <p><i class="fas fa-house-user"></i><strong>{{user.relationship}}</strong></p>
+                <p><i class="fas fa-clock"></i> Birthday on {{moment(user.dob).format('LL')}}</p>
+                {% if user == current_user%}
+                <a href="{{url_for('edit_profile_details')}}"><div>Edit Details</div></a>
+                {%endif%}
+            </div>
+            
+        </aside>
+        <section>
+            
+            <div class="posts-top">
+                <span class="h3">Posts</span>
+            </div>
+            <div class="posts-bottom">
+                <span id="active"><i class="fas fa-bars"></i> List View</span>
+            </div>
+            <!--Post container-->
+            {% if posts %}
+            {% for post in posts %}
+            <div class="timeline" id="post">
+                <h1 >{{post.body}}</h1>
+                <br>
+                <div class="timeline-picture">
+                    {%if post.post_image%}
+                    <img id="post-image" src="{{url_for('static', filename='img/posts/' + post.post_image)}}" alt="Default profile image">
+                    {%endif%}
+                </div>
+                {% if current_user == user %}
+                <a style='margin-right:10px' href="{{url_for('edit_post', id= post.id)}}"> <span class="label label-primary">Edit</span></a><a href="{{url_for('delete_post', id= post.id)}}"> <span class="label label-danger">Delete</span></a>
+                {%endif%}
+            <br>
+            <br>
+                <div class="timeline-options">
+                    {% if current_user.has_liked_post(post) %}
+                    <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}"><span style="margin-right: 15px;" class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{{ post.likes.count() }} Likes</span>                   
+                    </a>
+      {% else %}
+        <a href="{{ url_for('like_action', post_id=post.id, action='like') }}"><span style="margin-right: 15px;" class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{{ post.likes.count() }} Likes</span>                   
+</a>
+      {% endif %}
+                    
+                    <a href="{{ url_for('post', id=post.id) }}"><span class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/comment.svg')}}" alt="">{{ post.comments.count() }} Comment</span></a>
+                    <span class="live-icons"><i class="far fa-share-square"></i>&nbsp; Share</span>
+                </div>
+
+                <br>
+            </div>
+            <br>
+            <hr>
+            <br>
+            {%endfor%}
+            {%endif%}
+        </section>
+    </div>
+</main>
+{% endblock %}
+

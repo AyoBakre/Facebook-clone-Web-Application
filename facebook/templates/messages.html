@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{super()}}
+    <style>
+        .control-label {
+            display: none;
+        }    
+        body{
+            color: var(--white)
+        }          
+    </style>
+{% endblock %}
+{% block app_content %}
+<div class="container">
+    <h1>Messages</h1>
+    {% for post in messages %}
+        <!--post container-->
+<div class="view view-post-container smaller-margin">
+    <div class="view-post">
+        <div class="upper">
+            <div class="d-flex">
+                <div class="user">
+                    <div class="profile">
+                       <a href="{{url_for('user', username=post.author.username)}}"> 
+                           <img src="{{url_for('static', filename='img/avatar/' + post.author.profile_image)}}" alt=""> </a>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h6 class="name">
+                       <a href="{{url_for('user', username=post.author.username)}}"> {{ post.author.f_name }} {{ post.author.l_name }} </a>
+                    </h6>
+                    <span class="time">{{moment(post.timestamp).fromNow()}}</span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="desc">
+            {% if current_user == post.author %}
+            <p> {{ post.body }}</p>
+            <a href="{{url_for('edit_post', id= post.id)}}"> <span class="label label-primary">Edit</span></a>
+            {% else %}
+            <p> {{ post.body }}</p>
+            {% endif %}
+        </div>
+        {% if post.image %}
+        <div class="post-img">
+            <img src="{{ url_for('static', filename='img/messages/' + post.image) }}" alt="">
+        </div>
+        {% endif %}
+    </div>
+    <a href="{{url_for('send_message', recipient=post.author.username)}}">Reply</a>
+</div>
+<hr>
+<br>
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer messages
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older messages <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+    
+{% endblock %}

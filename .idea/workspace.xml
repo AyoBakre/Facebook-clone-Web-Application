@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="recover password">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qg1Zji8K58OiKsWPZsQuEHq1Vu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\compaq\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="" />
+      <created>1617486476975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617486476975</updated>
+    </task>
+    <task id="LOCAL-00001" summary="user-registration">
+      <created>1617580156556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617580156556</updated>
+    </task>
+    <task id="LOCAL-00002" summary="user login">
+      <created>1617613549188</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617613549188</updated>
+    </task>
+    <task id="LOCAL-00003" summary="post text and image">
+      <created>1617925789894</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617925789894</updated>
+    </task>
+    <task id="LOCAL-00004" summary="post text and image">
+      <created>1618096858462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618096858462</updated>
+    </task>
+    <task id="LOCAL-00005" summary="followers">
+      <created>1618215522234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618215522234</updated>
+    </task>
+    <task id="LOCAL-00006" summary="todo: finish story">
+      <created>1618272922508</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618272922508</updated>
+    </task>
+    <task id="LOCAL-00007" summary="followers list">
+      <created>1618302710733</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618302710747</updated>
+    </task>
+    <task id="LOCAL-00008" summary="likes and private messaging">
+      <created>1619180283607</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619180283607</updated>
+    </task>
+    <task id="LOCAL-00009" summary="explore">
+      <created>1619183194858</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619183194858</updated>
+    </task>
+    <task id="LOCAL-00010" summary="redesign">
+      <created>1619216578072</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619216578082</updated>
+    </task>
+    <task id="LOCAL-00011" summary="recover password">
+      <created>1619221095357</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619221095357</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="user-registration" />
+    <MESSAGE value="user login" />
+    <MESSAGE value="post text and image" />
+    <MESSAGE value="followers" />
+    <MESSAGE value="todo: finish story" />
+    <MESSAGE value="followers list" />
+    <MESSAGE value="likes and private messaging" />
+    <MESSAGE value="explore" />
+    <MESSAGE value="redesign" />
+    <MESSAGE value="recover password" />
+    <option name="LAST_COMMIT_MESSAGE" value="recover password" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617607099470">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
+    <state width="807" height="400" key="GridCell.Tab.0.bottom" timestamp="1619219854719">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="807" height="400" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619219854719" />
+    <state width="807" height="400" key="GridCell.Tab.0.center" timestamp="1619219854719">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="807" height="400" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619219854719" />
+    <state width="807" height="400" key="GridCell.Tab.0.left" timestamp="1619219854718">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="807" height="400" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619219854718" />
+    <state width="807" height="400" key="GridCell.Tab.0.right" timestamp="1619219854719">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="807" height="400" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619219854719" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619221191250">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619221191250" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619224770492">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1619224770492" />
+  </component>
+</project>

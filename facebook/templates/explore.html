@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block styles %}
+{{super()}}
+    <style>
+        .control-label {
+            display: none;
+        }        
+    </style>
+{% endblock %}
+
+
+{% block app_content %}
+    <!--content-->
+    <div class="container">
+        <div class="row">
+    <div class="wrapper">  
+        <!--posts-->
+        <div class="posts">
+         
+<!-- stories -->
+<div class="stories">
+    <div class="owl-controls">
+        <div class="owl-nav">
+            <div class="controllers nxtBtn">
+                <img src="{{url_for('static', filename='img/icons/arrow-right.svg')}}  " alt="">
+            </div>
+        </div>
+    </div>
+    <div class="owl-carousel owl-theme slider">
+        <div class="item">
+            <div class="overlay first">
+                <div class="create">
+                    <div class="icon">
+                        <a href="{{url_for('story')}}"><img src="{{url_for('static', filename='img/icons/plus.svg')}}" alt=""></a>
+                    </div>
+                    <a href="{{url_for('story')}}"><span>Create a Story</span></a> 
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="{{url_for('static', filename='img/avatar/' +current_user.profile_image)}}" alt="">
+            </div>
+        </div>
+        <!---->
+        
+        {% for story in stories %}
+        <div class="item">
+            <div class="overlay">
+                <div class="person">
+                    <div class="profile">
+                        <img src="{{url_for('static', filename='img/avatar/' + story.author.profile_image)}}" alt="">
+                    </div>
+                </div>
+                <h4> {{story.author.f_name}} {{story.author.l_name}} </h4>
+            </div>
+            <div class="story-image">
+                <img src="{{url_for('static', filename='img/stories/' + story.story_image)}}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+        <!---->
+    </div>
+</div>
+            <!--create post-->
+            <div class="timeline">
+                
+                <!--Post container-->
+                {% for post in posts.items %}
+                    {% include '_post.html' %}
+                {% endfor %}
+    
+                <!--people you may know-->
+                <div class="view friends smaller-margin">
+                    <div class="upper">
+                        <h6>people you may know</h6>
+                         
+                    </div>
+
+                    <div class="owl-carousel owl-theme people">
+                        {% for user in users %}
+                        {% if user!= current_user%}
+                        <div class="item">
+                            <div class="person-img">
+                                <div class="icon">
+                                    &times;
+                                </div>
+                                <img src="{{url_for('static', filename='img/avatar/' + user.profile_image)}}" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h4>
+                                    {{user.f_name}} {{user.l_name}}
+                                </h4>
+
+                                
+                                {% if not current_user.is_following(user) and user != current_user %}
+                                <button>
+                                    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+                                        {{ form.hidden_tag() }}
+                                        {{ form.submit(value='Follow', class_='btn btn-default') }}
+                                    </form>
+                                </button>
+                                {% elif current_user.is_following(user) and user!= current_user %}
+                            <button>
+                                    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+                                        {{ form.hidden_tag() }}
+                                        {{ form.submit(value='Unfollow', class_='btn btn-default') }}
+                                    </form>
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!---->
+                        {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+
+            </div>
+            <nav aria-label="..." class='pager'>
+                <ul class="pager">
+                    <li class="previous{% if not prev_url %} disabled{% endif %}">
+                        <a href="{{ prev_url or '#' }}">
+                            <span aria-hidden="true">&larr;</span> Newer posts
+                        </a>
+                    </li>
+
+                    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                        {% if page_num %}
+                        {% if posts.page_num == page_num %}
+                            <a class="btn btn-info mb-4 active" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                        {% else %}
+                        <a class="btn btn-outline-info mb-4" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                        
+                        {% endif %}
+                        {% else  %}
+                            ...
+                        {% endif %}
+                    {% endfor %}
+
+                    <li class="next{% if not next_url %} disabled{% endif %}">
+                        <a href="{{ next_url or '#' }}">
+                            Older posts <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+        </div>
+    </div>
+{% endblock %}
