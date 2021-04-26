@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
-
+{% set active_page = "register" %}
 {% block styles %}
 {{super()}}
     <style>
@@ -10,6 +10,11 @@
         body{
             color: var(--white)
         }          
+        @media only screen and (max-width: 992px) {
+            .lower{
+                margin-top: 50px;
+            }
+        }
     </style>
 {% endblock %}
 
@@ -19,11 +24,10 @@
         <div class="col-md-6">
             <div>
                 <img src="{{ url_for('static', filename='img/icons/logo.svg')}}" alt="">
-                <h3>Facebook helps you connect and share <br> with the people in your life.</h3>
+                <h4 style="text-align:center">Facebook helps you connect and share with the people in your life.</h4>
             </div>
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-6 lower">
             <h1>Sign Up</h1>
             <hr>
             {{ wtf.quick_form(form) }}

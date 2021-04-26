@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% set active_page = "index" %}
 
 {% block styles %}
 {{super()}}
@@ -79,7 +80,7 @@
                     <div class="input">
                         <div class="user">
                             <div class="profile">
-                                <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
+                                <img src="{{url_for('static', filename='img/avatar/' + current_user.profile_image)}}" alt="">
                             </div>
                         </div>
                         {% if form %}

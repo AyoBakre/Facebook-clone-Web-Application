@@ -135,6 +135,33 @@ h6.title {
 /* layout & content */
 
 /* nav */
+.desktop-nav{
+    display: none;
+}
+.navbar{
+    background-color: var(--accent);
+    border-bottom: 2px solid var(--border-bottom);
+}
+
+.navbar-brand img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+
+@media only screen and (min-width: 760px) {
+    .desktop-nav{
+        display: flex;
+    }
+    .navbar{
+        display: none;
+    }
+    /* nav */
 nav {
     display: flex;
     justify-content: space-between;
@@ -235,7 +262,14 @@ nav .tabs .tab-icon.active::after {
     width: 100%;
     border-bottom: 3px solid var(--border);
 }
-
+nav .right-side .active::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid var(--border);
+}
 nav .tabs .tab-icon .icon.has-notification::after {
     content: '6';
     position: absolute;
@@ -299,8 +333,9 @@ nav .right-side .user-icons .icon.has-notification::after {
     text-align: center;
     background-color: var(--notification);
 }
-
+}
 /* content -shortcuts and content- */
+
 .wrapper {
     height: auto;
     padding: 20px 25px;

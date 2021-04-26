@@ -13,47 +13,79 @@
 {% endblock %}
 
 
+
 {% block navbar %}
     <!--navbar-->
     {% if current_user.is_authenticated %}
-    <nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt="" title='facebook'></a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="{{'active' if active_page == 'index' }}"><a href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a></li>
+              <li class="{{'active' if active_page == 'explore' }}"><a href="{{url_for('explore')}}">Explore</a></li>
+              <li class="{{'active' if active_page == 'users' }}"><a href="{{url_for('users')}}">Users</a></li>
+              <li class="{{'active' if active_page == 'messaging' }}"><a href="{{url_for('messaging')}}">Messaging</a></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{{'active' if active_page == 'profile' }}"><a href="{{url_for('user', username=current_user.username)}}">{{ current_user.f_name}}'s Profile</a></li>
+                <li class="{{'active' if active_page == 'chat' }}"><a href="{{url_for('messages')}}">Chat</a></li>
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <nav class="desktop-nav">
 
         <!--logo and search-->
         <div class="left-side">
             <div class="logo">
-                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt=""></a>          
+                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt="" title='facebook'></a>          
             </div>
 
-            <div class="search">
-                <input type="text" placeholder="Search Facebook" name="" id="">
-            </div>
         </div>
 
         <!--tab icons-->
+        <a href="{{url_for('index')}}">
         <div class="tabs">
-            <div class="tab-icon active">
+            <div class="tab-icon {{'active' if active_page == 'index' }}">
                 <div class="icon">
-                    <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/home.svg')}}" alt=""></a>
+                    <img src="{{url_for('static', filename='img/icons/home.svg')}}" alt="" title="Home">
                 </div>
             </div>
+        </a>
             <a href="{{url_for('explore')}}">
-            <div class="tab-icon">
+            <div class="tab-icon {{'active' if active_page == 'explore' }}">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/flag.svg')}}" alt="">
+                    <img src="{{url_for('static', filename='img/icons/flag.svg')}}" alt="" title="Explore" >
                 </div>
             </div>
             </a>
             <a href="{{url_for('users')}}">
-            <div class="tab-icon">
+            <div class="tab-icon {{'active' if active_page == 'users' }}">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/users.svg')}}" alt="">
+                    <img src="{{url_for('static', filename='img/icons/users.svg')}}" alt="" title="Users">
                 </div>
             </div>
             </a>
             <a href="{{url_for('messaging')}}">
-            <div class="tab-icon">
+            <div class="tab-icon {{'active' if active_page == 'messaging' }}">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/chat.png')}}" alt="">
+                    <img src="{{url_for('static', filename='img/icons/chat.png')}}" alt="" title="Messaging">
                 </div>
             </div>
         </a>
@@ -62,9 +94,9 @@
         <!--right side-->
         <div class="right-side">
             <a href="{{url_for('user', username=current_user.username)}}">
-            <div class="user">
+            <div class="user {{'active' if active_page == 'profile' }}">
                 <div class="profile">
-                    <img src="{{url_for('static', filename='img/avatar/' + current_user.profile_image)}}" alt="">
+                    <img src="{{url_for('static', filename='img/avatar/' + current_user.profile_image)}}" alt="" title="Profile">
                 </div>
                 <h4>{{ current_user.f_name }}</h4>
             </div>
@@ -73,8 +105,8 @@
             <!--icons-->
             <a href="{{ url_for('messages') }}">
             <div class="user-icons">
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/messenger.svg')}}" alt="">
+                <div class="icon {{'active' if active_page == 'chat' }}">
+                    <img src="{{url_for('static', filename='img/icons/messenger.svg')}}" alt="" title="Chat">
                     {% set new_messages = current_user.new_messages() %}
                             {% if new_messages %}
                             <span class="badge">{{ new_messages }}</span>
@@ -85,7 +117,7 @@
             </a>
            <a href="{{url_for('logout')}}"> <div class="user-icons">
                 <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/logout.png')}}" alt="">
+                    <img src="{{url_for('static', filename='img/icons/logout.png')}}" alt="" title="Logout">
                 </div>
             </div></a>
         </div>
@@ -97,20 +129,20 @@
         <!--logo and search-->
         <div class="left-side">
             <div class="logo">
-                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt=""></a>          
+                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/icons/facebook.svg')}}" alt="" title="facebook"></a>          
             </div>
         </div>
         <div class="right-side">
 
             <!--icons-->
            <a href="{{url_for('login')}}"><div class="user-icons">
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/login.png')}}" alt="">
+                <div class="icon {{'active' if active_page == 'login' }}">
+                    <img src="{{url_for('static', filename='img/icons/login.png')}}" alt="" title="Login">
                 </div>
             </div></a>
            <a href="{{url_for('register')}}"> <div class="user-icons">
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/register.png')}}" alt="">
+                <div class="icon {{'active' if active_page == 'register' }}">
+                    <img src="{{url_for('static', filename='img/icons/register.png')}}" alt="" title="Register">
                 </div>
             </div></a>
         </div>
@@ -123,8 +155,8 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-info alert-dismissible" role="alert">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div class="alert alert-info alert-dismissible" role="alert" style="text-align: center;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color:red">&times;</a>
                     <strong>{{ message }}</strong>
                 </div>          
             {% endfor %}

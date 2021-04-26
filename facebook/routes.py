@@ -45,7 +45,7 @@ def index():
 @app.route('/explore', methods=['GET', 'POST'])
 @login_required
 def explore():
-    form=EmptyForm()
+    form = EmptyForm()
     users = User.query.all()
     stories = Story.query.all()
     page = request.args.get('page', 1, type=int)

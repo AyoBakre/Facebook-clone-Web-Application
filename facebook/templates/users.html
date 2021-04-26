@@ -1,6 +1,7 @@
 
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
+{% set active_page = "users" %}
 {% block styles %}
 {{super()}}
     <style>   
@@ -17,6 +18,7 @@
             <h1>Discover Users: </h1>
             <hr>
             {% for user in users %}
+            {% if user != current_user%}
                 <a href="{{url_for('user', username=user.username)}}"> <div class="online">
     
                     <div class="user">
@@ -29,6 +31,7 @@
                     <br>
                 </div>
             </a>
+            {% endif %}
             {% endfor %}
         
         </div>
