@@ -109,12 +109,12 @@
             <div class="intro">
                 <h3>Intro</h3>
                 <p><i class="fas fa-graduation-cap"></i> Went to <strong>{{user.school}}</strong></p>
-                <p><i class="fas fa-house-user"></i> Lives in <strong>{{user.location}}</strong></p>
+                <p><i class="fas fa-street-view"></i> Lives in <strong>{{user.location}}</strong></p>
                 
                 <p><i class="fas fa-house-user"></i> From <strong>{{user.hometown}}</strong></p>
                 
-                <p><i class="fas fa-house-user"></i><strong>{{user.relationship}}</strong></p>
-                <p><i class="fas fa-clock"></i> Birthday on {{moment(user.dob).format('LL')}}</p>
+                <p><i class="fas fa-heart"></i><strong>{{user.relationship}}</strong></p>
+                <p><i class="fas fa-birthday-cake"></i> Birthday on {{moment(user.dob).format('LL')}}</p>
                 {% if user == current_user%}
                 <a href="{{url_for('edit_profile_details')}}"><div>Edit Details</div></a>
                 {%endif%}
@@ -148,14 +148,26 @@
             <br>
                 <div class="timeline-options">
                     {% if current_user.has_liked_post(post) %}
-                    <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}"><span style="margin-right: 15px;" class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{{ post.likes.count() }} Likes</span>                   
+                    <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}"><span style="margin-right: 15px;" class="live-icons"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{% if post.likes.count() == 1 %}
+                        {{ post.likes.count() }} Like
+                        {%else %}
+                        {{ post.likes.count() }} likes
+                        {%endif %}</span>                   
                     </a>
       {% else %}
-        <a href="{{ url_for('like_action', post_id=post.id, action='like') }}"><span style="margin-right: 15px;" class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{{ post.likes.count() }} Likes</span>                   
+        <a href="{{ url_for('like_action', post_id=post.id, action='like') }}"><span style="margin-right: 15px;" class="live-icons"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="">{% if post.likes.count() == 1 %}
+            {{ post.likes.count() }} Like
+            {%else %}
+            {{ post.likes.count() }} likes
+            {%endif %}</span>                   
 </a>
       {% endif %}
                     
-                    <a href="{{ url_for('post', id=post.id) }}"><span class="live-icons label label-primary"><img src="{{url_for('static', filename='img/icons/comment.svg')}}" alt="">{{ post.comments.count() }} Comment</span></a>
+                    <a href="{{ url_for('post', id=post.id) }}"><span class="live-icons"><img src="{{url_for('static', filename='img/icons/comment.svg')}}" alt="">{% if post.comments.count() == 1 %}
+                        {{ post.comments.count() }} Comment
+                        {%else %}
+                        {{ post.comments.count() }} Comments
+                        {%endif %}</span></a>
                     
                 </div>
 

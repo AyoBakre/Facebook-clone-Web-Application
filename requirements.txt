@@ -2,7 +2,9 @@ alembic==1.5.8
 bidict==0.21.2
 bleach==3.3.0
 blinker==1.4
+cffi==1.14.5
 click==7.1.2
+cryptography==3.4.7
 dnspython==2.1.0
 dominate==2.6.0
 email-validator==1.1.2
@@ -27,7 +29,9 @@ MarkupSafe==1.1.1
 packaging==20.9
 Pillow==8.2.0
 psycopg2==2.8.6
+pycparser==2.20
 PyJWT==2.0.1
+pyOpenSSL==20.0.1
 pyparsing==2.4.7
 python-dateutil==2.8.1
 python-editor==1.0.4

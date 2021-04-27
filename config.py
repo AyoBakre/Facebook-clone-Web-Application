@@ -17,5 +17,4 @@ class Config(object):
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'bakre.dev@gmail.com'
     MAIL_PASSWORD = '#KoffY299'
-    POSTS_PER_PAGE = 25
     ADMINS = ['ayomidebakre@gmail.com']

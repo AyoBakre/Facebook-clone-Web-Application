@@ -19,6 +19,7 @@ def before_request():
 @app.route('/', methods=['GET', 'POST'])
 @login_required
 def index():
+    flash('You are seeing posts from users you are following only')
     form = PostForm()
     user = User.query.filter_by(username=current_user.username).first_or_404()
     stories = Story.query.all()
@@ -45,6 +46,7 @@ def index():
 @app.route('/explore', methods=['GET', 'POST'])
 @login_required
 def explore():
+    flash('You are seeing posts from all users')
     form = EmptyForm()
     users = User.query.all()
     stories = Story.query.all()
@@ -193,6 +195,8 @@ def edit_profile_details():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    flash('''Here for a demo and don't want to use your real details, you can register using fake info \n
+                    or login using: 'email': demo@facebook.com, 'password': 'demo' ''')
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RegistrationForm()
@@ -209,6 +213,9 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    flash('''Here for a demo and don't want to use your real details, you can register using fake info \n
+                or login using: 'email': demo@facebook.com, 'password': 'demo' ''')
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
@@ -299,9 +306,9 @@ def messages():
     messages = current_user.messages_received.order_by(
         Message.timestamp.desc()).paginate(
             page, app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.messages', page=messages.next_num) \
+    next_url = url_for('messages', page=messages.next_num) \
         if messages.has_next else None
-    prev_url = url_for('main.messages', page=messages.prev_num) \
+    prev_url = url_for('messages', page=messages.prev_num) \
         if messages.has_prev else None
 
     return render_template('messages.html', messages=messages,
@@ -333,7 +340,7 @@ def like_action(post_id, action):
     if action == 'unlike':
         current_user.unlike_post(post)
         db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(request.referrer)
 
 
 @app.route('/users', methods=['GET', 'POST'])
