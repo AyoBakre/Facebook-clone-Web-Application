@@ -20,97 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="nav bar ui fix">
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/05ba193610a8c6b4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/626a914bb8cc83f7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/7dab5eb5c1e388fd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/8fbf7e9939359e40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/b36f0200b88af170.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/b7516a563058aa66.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/e99dd28c42cb3906.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/avatar/hero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/106497d0db8efad5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/16b66ea837442085.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/33844d9c5592599c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/41270c37d448bad4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/42ab0b20d4f7332f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/58b05b96f2194bb9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/5b158771d6a75326.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/62b7f526f2f5a157.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/63d7b534770be945.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/6b825b9fc4438700.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/70cd5b630f6a75c6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/7499f94430d9dfa9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/83c1b6121ac0c8e2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/87926278998fdbb1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/8d5d4473a27d9845.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/8f359703eda3e542.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/91c9ce0e0889f079.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/964e11ebd7ca1b13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/9b7d4d4ecfacd0fa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/a5e1e92b94bb5478.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/b6811a30dabe1c61.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/b7910b1cbfebeee8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/c2ae55b1e841c0f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/cd822ec41abe2c8a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/d2f4fd25c37ba81f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/dcbbbe58cea4bb88.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/e420d387f5a60444.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/e712a458002fde94.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/ee17c177f41617f8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/f3d1cb34b3949538.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/f59f2bba8a987bca.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/f628a2c99e8adb04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/cover/fbdfc0f277b8b3e4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/messages/6dee83ea7d6c3334.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/messages/88225311edc32946.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/messages/f94fbaa14aa3be9d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/05f0adf674882cdc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/0dfdc4cb45cd257b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/1176cf43476380e7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/1633d198cc97e450.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/3789476ca7fee8cd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/748459b9a4a000fd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/7dca9dd752adb7e2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/83b65beaaf5e5817.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/8b497f9a76337e96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/91c48473c18bfa9d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/9ac2500749a49b84.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/a6d16803a8261355.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/b367c02e03503a6c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/cca61131952edd4c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/d5aba1ac86bf7e32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/d5deac2fd4df17f6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/d8a888d713da6ade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/de50b20c0b002895.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/e235d36b2f0c9d05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/f0e84f2a901cf098.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/0a43b553795da452.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/0f5f92c606051b5d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/26bc2994d07bcfc5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/3f0fcd05eb2b0923.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/45e2ca91efd7c616.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/634e263efa07c964.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/6bebe8d99acb13c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/6fc51a249065dbd1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/99f67afbee9cad4d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/b0a0aaac4cef643e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/bd42034747052471.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/c1e189a691c736e0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/e18964f9db3a626e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/page-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/page-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/page-3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/st-1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/st-2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/st-3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/static/img/stories/st-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,22 +223,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
-    <state width="1344" height="378" key="GridCell.Tab.0.bottom" timestamp="1619485583310">
+    <state width="1344" height="378" key="GridCell.Tab.0.bottom" timestamp="1619499769387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="378" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619485583310" />
-    <state width="1344" height="378" key="GridCell.Tab.0.center" timestamp="1619485583309">
+    <state width="1344" height="378" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619499769387" />
+    <state width="1344" height="378" key="GridCell.Tab.0.center" timestamp="1619499769387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="378" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619485583309" />
-    <state width="1344" height="378" key="GridCell.Tab.0.left" timestamp="1619485583309">
+    <state width="1344" height="378" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619499769387" />
+    <state width="1344" height="378" key="GridCell.Tab.0.left" timestamp="1619499769386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="378" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619485583309" />
-    <state width="1344" height="378" key="GridCell.Tab.0.right" timestamp="1619485583310">
+    <state width="1344" height="378" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619499769386" />
+    <state width="1344" height="378" key="GridCell.Tab.0.right" timestamp="1619499769387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="378" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619485583310" />
+    <state width="1344" height="378" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619499769387" />
     <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619471758123">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -401,7 +401,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .stories .item .overlay h4 {
     color: var(--white);
     font-weight: 500;
-    font-size: 0.14px;
+    font-size: 12px;
     width: 80%;
     margin-left: 5px;
 }
@@ -583,7 +583,6 @@ nav .right-side .user-icons .icon.has-notification::after {
     font-weight: 500;
     text-transform: capitalize;
 }
-
 .posts .view .view-post .upper .d-flex .user {
     margin-top: -10px;
 }
@@ -795,6 +794,11 @@ nav .right-side .user-icons .icon.has-notification::after {
     cursor: pointer;
 }
 
+
+.desc{
+    padding-left: 10px;
+}
+
 @media only screen and (max-width: 900px){
 
     .shortcuts{
@@ -812,7 +816,19 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 }
+@media only screen and (max-width: 600px){
 
+    /* strories and events */
+    .posts {
+        width: 100%;
+        padding: 0;
+    }
+
+.posts .stories .item {
+    height: 30vh;
+}
+
+}
 /* shortcuts 2 */
 .wrapper .shortcuts-2 .first-col .menu-item:last-of-type .item-row .icon,
 .wrapper .shortcuts-2 .first-col .menu-item:last-of-type .item-row h4 {

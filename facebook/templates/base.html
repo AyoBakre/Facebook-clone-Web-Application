@@ -9,7 +9,179 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}"> 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
-    
+    <style>
+        .s-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            position: relative;
+            background-color: var(--accent);
+            border-bottom: 2px solid var(--border-bottom);
+            height: auto;
+        }
+        
+        .s-nav .left-side {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .s-nav .left-side .logo {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+        }
+        
+        .s-nav .left-side .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .s-nav .left-side .search {
+            border-radius: 100px;
+            width: 250px;
+            position: relative;
+            background-color: var(--lighter);
+            margin-left: 10px;
+            padding-left: 22px;
+        }
+        
+        .s-nav .left-side .search input {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background-color: transparent;
+            color: var(--placeholder);
+            font-size: 14px;
+            font-family: Poppins;
+        }
+        
+        .s-nav .left-side .search::before {
+            content: '';
+            height: 12px;
+            width: 12px;
+            padding: 2px;
+            background-image: url('../img/icons/search.svg');
+            background-size: contain;
+            position: absolute;
+            left: 12px;
+            top: 18px;
+        }
+        
+        
+        /* .s-nav tabs */
+        .s-nav .tabs {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .s-nav .tabs .tab-icon {
+            height: 100%;
+            margin: 0;
+            margin-top: 5px;
+            width: 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .s-nav .tabs .tab-icon .icon {
+            margin-bottom: 10px;
+            height: 25px;
+            width: 25px;
+            margin: auto;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .s-nav .tabs .tab-icon .icon img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        
+        .s-nav .tabs .tab-icon.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid var(--border);
+        }
+        .s-nav .right-side .active::after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid var(--border);
+        }
+        .s-nav .tabs .tab-icon .icon.has-notification::after {
+            content: '6';
+            position: absolute;
+            top: -10px;
+            right: -12px;
+            border-radius: 50%;
+            font-size: 0.77rem;
+            color: var(--white);
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            background-color: var(--notification);
+        }
+        
+        .s-nav .tabs .tab-icon:last-child .icon.has-notification::after {
+            content: '4';
+        }
+        
+        /* user side -right side */
+        .s-nav .right-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .s-nav .right-side .user-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 15px;
+        }
+        
+        .s-nav .right-side .user-icons .icon {
+            margin: 0 3px;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--lighter);
+            cursor: pointer;
+        }
+        
+        .s-nav .right-side .user-icons .icon img {
+            height: 40%;
+            width: 40%;
+        }
+        
+        .s-nav .right-side .user-icons .icon.has-notification::after {
+            content: '12';
+            position: absolute;
+            top: -5px;
+            right: 0;
+            border-radius: 20px;
+            font-size: 0.77rem;
+            color: var(--white);
+            padding: 2px 8px;
+            text-align: center;
+            background-color: var(--notification);
+        }
+    </style>
 {% endblock %}
 
 
@@ -109,7 +281,7 @@
                     <img src="{{url_for('static', filename='img/icons/messenger.svg')}}" alt="" title="Chat">
                     {% set new_messages = current_user.new_messages() %}
                             {% if new_messages %}
-                            <span class="badge">{{ new_messages }}</span>
+                            <span class="badge" style="color: red;">{{ new_messages }}</span>
                             {% endif %}
                 </div>
             </div>
@@ -124,7 +296,7 @@
     </nav>
     <!--navbar ends-->
     {% else %}
-    <nav>
+    <nav class="s-nav">
 
         <!--logo and search-->
         <div class="left-side">
