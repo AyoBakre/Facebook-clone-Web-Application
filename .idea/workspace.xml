@@ -19,22 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="nav bar ui fix">
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/static/img/icons/site.webmanifest" afterDir="false" />
+    <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="deploy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619471750296</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="deploy">
+      <created>1619511489575</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1619511489575</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,36 +219,36 @@
     <MESSAGE value="explore" />
     <MESSAGE value="redesign" />
     <MESSAGE value="recover password" />
-    <MESSAGE value="deploy" />
     <MESSAGE value="responsiveness" />
     <MESSAGE value="nav bar ui fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="nav bar ui fix" />
+    <MESSAGE value="deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617607099470">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
-    <state width="1344" height="431" key="GridCell.Tab.0.bottom" timestamp="1619511307999">
+    <state width="1344" height="431" key="GridCell.Tab.0.bottom" timestamp="1619511627080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="431" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619511307999" />
-    <state width="1344" height="431" key="GridCell.Tab.0.center" timestamp="1619511307999">
+    <state width="1344" height="431" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619511627080" />
+    <state width="1344" height="431" key="GridCell.Tab.0.center" timestamp="1619511627080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="431" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619511307999" />
-    <state width="1344" height="431" key="GridCell.Tab.0.left" timestamp="1619511307999">
+    <state width="1344" height="431" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619511627080" />
+    <state width="1344" height="431" key="GridCell.Tab.0.left" timestamp="1619511627079">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="431" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619511307999" />
-    <state width="1344" height="431" key="GridCell.Tab.0.right" timestamp="1619511307999">
+    <state width="1344" height="431" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619511627079" />
+    <state width="1344" height="431" key="GridCell.Tab.0.right" timestamp="1619511627080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="431" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619511307999" />
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619471758123">
+    <state width="1344" height="431" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619511627080" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619511638919">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619471758123" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619511638919" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619504754404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
