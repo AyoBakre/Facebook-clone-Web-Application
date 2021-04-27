@@ -22,25 +22,24 @@
         </div>
 
         <div class="desc">
-            {% if current_user == post.author %}
             <p> {{ post.body }}</p>
-            <a style='margin-right:10px' href="{{url_for('edit_post', id= post.id)}}"> <span class="label label-primary">Edit</span></a><a href="{{url_for('delete_post', id= post.id)}}"> <span class="label label-danger">Delete</span></a>
-            {% else %}
-            <p> {{ post.body }}</p>
-            {% endif %}
         </div>
         <br>
         {% if post.post_image %}
         <div class="post-img">
             <img src="{{ url_for('static', filename='img/posts/' + post.post_image) }}" alt="">
         </div>
+        <br>
         {% endif %}
-
+        {% if current_user == user%}
+        
+        <a style='margin-right:10px' href="{{url_for('edit_post', id= post.id)}}"> <span class="label label-primary">Edit</span></a><a href="{{url_for('delete_post', id= post.id)}}"> <span class="label label-danger">Delete</span></a>
+        {%endif%}
         <div class="actions-container">
             <div class="action">
                 <div class="icon">
                     {% if current_user.has_liked_post(post) %}
-                <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}"><img src="{{url_for('static', filename='img/icons/unlike.jpg')}}" alt=""></a>
+                <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt="" style="background-color: var(--border);"></a>
   {% else %}
     <a href="{{ url_for('like_action', post_id=post.id, action='like') }}"><img src="{{url_for('static', filename='img/icons/thumbs-up.svg')}}" alt=""></a>
   {% endif %}
@@ -48,7 +47,11 @@
                     
                 </div>
                 <span class="label label-primary">
-                    {{ post.likes.count() }} Likes
+                    {% if post.likes.count() == 1 %}
+                    {{ post.likes.count() }} Like
+                    {%else %}
+                    {{ post.likes.count() }} likes
+                    {%endif %}
 
                 </span>
             </div>
@@ -64,19 +67,14 @@
                 <span>
                     <a href="{{ url_for('post', id=post.id) }}">
                         <span class="label label-primary">
-                            {{ post.comments.count() }} Comments
+                            {% if post.comments.count() == 1 %}
+                    {{ post.comments.count() }} Comment
+                    {%else %}
+                    {{ post.comments.count() }} Comments
+                    {%endif %}
 
                         </span>
                     </a>
-                </span>
-            </div>
-
-            <div class="action">
-                <div class="icon">
-                    <img src="{{url_for('static', filename='img/icons/share.svg')}}" alt="">
-                </div>
-                <span>
-                    share
                 </span>
             </div>
         </div>

@@ -1,136 +1,26 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% set active_page = "index" %}
 
 {% block styles %}
 {{super()}}
     <style>    
         body{
+            
             color: var(--white)
-        }          
+        }         
+        .row{
+            padding: 50px;
+        } 
     </style>
 {% endblock %}
 
 
         {% block app_content %}
         <!--content-->
-        <div class="wrapper">
-           <div class="shortcuts">
-               <div class="first-col">
-                   <div class="menu-item">
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/hero.png')}}" alt="">
-                           </div>
-                           <h4>Anne</h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/icons/shield.svg')}}" alt="">
-                           </div>
-                           <h4>COVID-19 Infromation Center </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/icons/colored-people.svg')}}" alt="">
-                           </div>
-                           <h4>Friends </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/icons/colored-messenger.svg')}}" alt="">
-                           </div>
-                           <h4>Messenger </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/icons/colored-flag.svg')}}" alt="">
-                           </div>
-                           <h4>Pages </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row  border">
-                           <div class="icon more">
-                               <img src="{{url_for('static', filename='img/icons/arrow-down.svg')}}" alt="">
-                           </div>
-                           <h4>see more </h4>
-                       </div>
-                   </div>
-               </div>
-               <div class="second-col">
-       
-                   <h6 class="title">
-                       your shortcuts
-                   </h6>
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
-                           </div>
-                           <h4>Designers house </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
-                           </div>
-                           <h4>Script house </h4>
-                       </div>
-                       <div class="menu-item">
-                           <div class="item-row">
-                               <div class="icon">
-                                   <img src="{{url_for('static', filename='img/stories/page-1.jpg')}}" alt="">
-                               </div>
-                               <h4>ui ux Designers workshop </h4>
-                           </div>
-                       </div>
-       
-                       <div class="menu-item">
-                           <div class="item-row">
-                               <div class="icon">
-                                   <img src="{{url_for('static', filename='img/stories/st-3.jpeg')}}" alt="">
-                               </div>
-                               <h4>netflix movies recommends </h4>
-                           </div>
-                       </div>
-       
-                       <div class="menu-item">
-                           <div class="item-row">
-                               <div class="icon">
-                                   <img src="{{url_for('static', filename='img/stories/page-2.jpg')}}" alt="">
-                               </div>
-                               <h4>the futur </h4>
-                           </div>
-                       </div>
-       
-       
-                       <div class="menu-item">
-                           <div class="item-row">
-                               <div class="icon">
-                                   <img src="{{url_for('static', filename='img/stories/page-3.jpeg')}}" alt="">
-                               </div>
-                               <h4>aj smart </h4>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
+        <div class="container">
+           
            {% if form %}
             <div class="row">
                 <div class="col-md-12">
@@ -138,132 +28,6 @@
                 </div>
             </div>
         {% endif %}
-           <!--shortcuts 2 -events and chat- -->
-           <div class="shortcuts shortcuts-2">
-               <div class="second-col first-col">
-                   <div class="menu-item">
-                       <div class="upper">
-                           <h6>Your pages</h6>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/stories/st-2.jpeg')}}" alt="">
-                           </div>
-                           <h4>Script house </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon">
-                               <img src="{{url_for('static', filename='img/stories/st-1.jpeg')}}" alt="">
-                           </div>
-                           <h4>omar ui design </h4>
-                       </div>
-                   </div>
-       
-                   <div class="menu-item">
-                       <div class="item-row  border">
-                           <div class="icon more">
-                               <img src="{{url_for('static', filename='img/icons/arrow-down.svg')}}" alt="">
-                           </div>
-                           <h4>see more </h4>
-                       </div>
-                   </div>
-               </div>
-               <div class="second-col">
-       
-                   <h6 class="title">
-                       birthdays
-                   </h6>
-                   <div class="menu-item">
-                       <div class="item-row">
-                           <div class="icon not-rounded">
-                               <img src="{{url_for('static', filename='img/icons/gift.svg')}}" alt="">
-                           </div>
-                           <h4>it's diana berry's birthday </h4>
-                       </div>
-                   </div>
-                   <div class="online">
-                       <h6 class="title">
-                           contact
-                       </h6>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
-                           </div>
-                           <h4>diana berry</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
-                           </div>
-                           <h4>rosie pie</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
-                           </div>
-                           <h4>samantha jones</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
-                           </div>
-                           <h4>john doe</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/4.jpg')}}" alt="">
-                           </div>
-                           <h4>stacy jr.</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/5.jpg')}}" alt="">
-                           </div>
-                           <h4>christin sam</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/6.jpg')}}" alt="">
-                           </div>
-                           <h4>kate simon</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/1.jpg')}}" alt="">
-                           </div>
-                           <h4>diana berry</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/2.jpg')}}" alt="">
-                           </div>
-                           <h4>sarah cerny</h4>
-                       </div>
-       
-                       <div class="user">
-                           <div class="profile">
-                               <img src="{{url_for('static', filename='img/avatar/3.jpg')}}" alt="">
-                           </div>
-                           <h4>josh doe</h4>
-                       </div>
-       
-                   </div>
-               </div>
-           </div>
+           
        </div>
        {% endblock %}

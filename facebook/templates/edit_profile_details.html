@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% set active_page = "profile" %}
 
 
 {% block styles %}
@@ -22,6 +23,8 @@
             {{ wtf.quick_form(form) }}
         </div>
     </div>
+    <br>
+
     <a href="{{url_for('user', username=current_user.username)}}">Back</a>
 </div>
 {% endif %}

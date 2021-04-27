@@ -19,15 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="responsiveness">
+    <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="nav bar ui fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/facebook/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/facebook/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/explore.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/explore.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/facebook/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/send_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/send_message.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/facebook/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619271509188</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="nav bar ui fix">
+      <created>1619471750296</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619471750296</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,33 +224,34 @@
     <MESSAGE value="recover password" />
     <MESSAGE value="deploy" />
     <MESSAGE value="responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="responsiveness" />
+    <MESSAGE value="nav bar ui fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="nav bar ui fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617607099470">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
-    <state width="1344" height="411" key="GridCell.Tab.0.bottom" timestamp="1619470233452">
+    <state width="1344" height="378" key="GridCell.Tab.0.bottom" timestamp="1619485157433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="411" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619470233452" />
-    <state width="1344" height="411" key="GridCell.Tab.0.center" timestamp="1619470233451">
+    <state width="1344" height="378" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619485157433" />
+    <state width="1344" height="378" key="GridCell.Tab.0.center" timestamp="1619485157433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="411" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619470233451" />
-    <state width="1344" height="411" key="GridCell.Tab.0.left" timestamp="1619470233451">
+    <state width="1344" height="378" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619485157432" />
+    <state width="1344" height="378" key="GridCell.Tab.0.left" timestamp="1619485157432">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="411" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619470233451" />
-    <state width="1344" height="411" key="GridCell.Tab.0.right" timestamp="1619470233452">
+    <state width="1344" height="378" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619485157432" />
+    <state width="1344" height="378" key="GridCell.Tab.0.right" timestamp="1619485157433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="411" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619470233452" />
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619271825290">
+    <state width="1344" height="378" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619485157433" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619471758123">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619271825290" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619471758123" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619224770492">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

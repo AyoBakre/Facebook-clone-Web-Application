@@ -69,7 +69,6 @@ def story():
         db.session.commit()
         flash('Your story is now live!')
         return redirect(url_for('index'))
-    flash('Your comment has been published.')
     return render_template('story.html', title='Add Story', form=form)
 
 
@@ -107,7 +106,7 @@ def edit_post(id):
         return redirect(url_for('post', id=post.id))
     elif request.method == 'GET':
         form.post.data = post.body
-    return render_template('edit_post.html', form=form)
+    return render_template('edit_post.html', form=form, title='Edit Post' + str(post.id))
 
 
 @app.route('/delete_post/<int:id>/', methods=['GET', 'POST'])
@@ -139,7 +138,7 @@ def post(id):
         db.session.commit()
         flash('Your comment has been published.')
         return redirect(url_for('post', id=post.id))
-    return render_template('post.html', form=form, post=post, comments=comments, next_url=next_url, prev_url=prev_url)
+    return render_template('post.html', form=form, post=post, comments=comments, next_url=next_url, prev_url=prev_url, title='Post' + str(post.id))
 
 
 @app.route('/<username>/followers', methods=['GET', 'POST'])
@@ -286,7 +285,7 @@ def send_message(recipient):
         db.session.add(msg)
         db.session.commit()
         flash('Your message has been sent.')
-        return redirect(url_for('user', username=recipient))
+        return redirect(request.referrer)
     return render_template('send_message.html', title='Send Message',
                            form=form, user=user)
 
@@ -305,21 +304,20 @@ def messages():
     prev_url = url_for('main.messages', page=messages.prev_num) \
         if messages.has_prev else None
 
-    return render_template('messages.html', messages=messages.items,
-                           next_url=next_url, prev_url=prev_url)
+    return render_template('messages.html', messages=messages,
+                           next_url=next_url, prev_url=prev_url, title="Messages")
 
 
 @app.route('/messaging', methods=['GET', 'POST'])
 @login_required
 def messaging():
-    folowers = User.query.filter_by(username=current_user.username).first().followers.all()
-    foloweds = User.query.filter_by(username=current_user.username).first().followed.all()
+    users = User.query.all()
     form = RecipientList()
     form.recipient.choices = []
-    for i in folowers:
-        form.recipient.choices.append(i.username)
-    for i in foloweds:
-        form.recipient.choices.append(i.username)
+    for user in users:
+        if current_user == user:
+            continue
+        form.recipient.choices.append(user.username)
     if form.validate_on_submit():
         return redirect(url_for('send_message', recipient=form.recipient.data))
     return render_template('send_message.html', title='Send Message', form=form)
@@ -377,6 +375,6 @@ def reset_password(token):
     return render_template('reset_password.html', form=form)
 
 
-'''return redirect(request.referrer)'''
+
 
 

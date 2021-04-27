@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
-
+{% set active_page = "messaging" %}
 {% block styles %}
 {{super()}}
     <style>
@@ -17,17 +17,19 @@
 <div class="container">
     {% if user %}
     <h1>Send a Private Message to {{user.f_name}} {{user.l_name}}</h1>
+    <br>
     {% else%}
     <h1>Send a Private Message to: </h1>
+    <br>
     {% endif %}
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
     {% if message_form %}
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
             {{ wtf.quick_form(message_form) }}
         </div>
     </div>

@@ -795,6 +795,23 @@ nav .right-side .user-icons .icon.has-notification::after {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 900px){
+
+    .shortcuts{
+        display: none;
+    }
+
+
+/* strories and events */
+.posts {
+    width: 80%;
+}
+
+.posts .stories .item {
+    height: 40vh;
+}
+
+}
 
 /* shortcuts 2 */
 .wrapper .shortcuts-2 .first-col .menu-item:last-of-type .item-row .icon,
@@ -871,8 +888,8 @@ header{
     background-color: rgba(255,255,255,0.2);
     font-weight: 700;
     position: absolute;
-    right: 35px;
-    bottom: 22px;
+    left: 0;
+    top: 0;
     z-index: +1;
 }
 

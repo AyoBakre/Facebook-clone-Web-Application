@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+{% import 'bootstrap/wtf.html' as wtf %}
+{% set active_page = "chat" %}
 {% block styles %}
 {{super()}}
     <style>
@@ -8,65 +9,115 @@
         }    
         body{
             color: var(--white)
-        }          
+        } 
+        body a {
+            color: var(--white)
+        }    
+        .chat{
+            background-color:var(--lighter);
+            border-radius: 40px;
+            padding: 20px;
+        }     
+        .profile img {
+            width: 50px;
+            border-radius: 50%;
+        }
+        .desc{
+            background-color: var(--placeholder);
+            border-radius: 30px;
+            width: 70%;
+            height: auto;
+            float: right;
+            margin-right: 50px;
+        }
+        .time{
+            float: left;
+            color: var(--border-bottom);
+            padding: 10px;
+        }
+        .body{
+            color: black;
+            padding: 20px;
+            font-size: 18px;
+        }
+        span a {
+            color: blue;
+            float: right;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        span a:hover{
+            text-decoration: none;
+        }
+        .profile a span{
+            padding: 15px;
+            font-size: 24px;
+            text-transform: capitalize;
+        }
     </style>
 {% endblock %}
 {% block app_content %}
 <div class="container">
-    <h1>Messages</h1>
-    {% for post in messages %}
+    <h1>Conversations</h1>
+    <br>
+    {% for post in messages.items %}
         <!--post container-->
-<div class="view view-post-container smaller-margin">
-    <div class="view-post">
-        <div class="upper">
-            <div class="d-flex">
-                <div class="user">
-                    <div class="profile">
-                       <a href="{{url_for('user', username=post.author.username)}}"> 
-                           <img src="{{url_for('static', filename='img/avatar/' + post.author.profile_image)}}" alt=""> </a>
-                    </div>
-                </div>
-
-                <div class="info">
-                    <h6 class="name">
-                       <a href="{{url_for('user', username=post.author.username)}}"> {{ post.author.f_name }} {{ post.author.l_name }} </a>
-                    </h6>
-                    <span class="time">{{moment(post.timestamp).fromNow()}}</span>
-                </div>
-            </div>
-
-
+<div class="chat">
+    <div class="container">
+        <div class="profile">
+            <a href="{{url_for('user', username=post.author.username)}}"> 
+                <img src="{{url_for('static', filename='img/avatar/' + post.author.profile_image)}}" alt=""> 
+                <span>{{ post.author.f_name }} {{ post.author.l_name }}</span></a>
+                
         </div>
-
         <div class="desc">
             {% if current_user == post.author %}
-            <p> {{ post.body }}</p>
+            <p class="body"> {{ post.body }}</p>
             <a href="{{url_for('edit_post', id= post.id)}}"> <span class="label label-primary">Edit</span></a>
             {% else %}
-            <p> {{ post.body }}</p>
+            <p class="body"> {{ post.body }}</p>
             {% endif %}
-        </div>
-        {% if post.image %}
+            {% if post.image %}
         <div class="post-img">
             <img src="{{ url_for('static', filename='img/messages/' + post.image) }}" alt="">
         </div>
         {% endif %}
+        <span ><a href="{{url_for('send_message', recipient=post.author.username)}}" >Reply</a></span>
+            <span class="time">Sent {{moment(post.timestamp).fromNow()}}</span>
+        </div>
+        
     </div>
-    <a href="{{url_for('send_message', recipient=post.author.username)}}">Reply</a>
+    
 </div>
 <hr>
 <br>
     {% endfor %}
-    <nav aria-label="...">
+    <nav aria-label="..." class='pager'>
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> Newer messages
+                    <span aria-hidden="true">&larr;</span> Newer Messages
                 </a>
             </li>
+
+            {% for page_num in messages.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if page_num %}
+                {% if messages.page_num == page_num %}
+                    <a class="btn btn-info mb-4 active" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                {% else %}
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('index', page=page_num)}}">{{page_num}}</a>
+                
+                {% endif %}
+                {% else  %}
+                    ...
+                {% endif %}
+            {% endfor %}
+
             <li class="next{% if not next_url %} disabled{% endif %}">
                 <a href="{{ next_url or '#' }}">
-                    Older messages <span aria-hidden="true">&rarr;</span>
+                    Older Messages <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>
