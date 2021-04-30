@@ -195,8 +195,8 @@ def edit_profile_details():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    flash('''Here for a demo and don't want to use your real details, you can register using fake info \n
-                    or login using: 'email': demo@facebook.com, 'password': 'demo' ''')
+    flash('''Here for a demo and don't want to use your real details, you can register using fake info 
+    \n or login using: 'email': demo@facebook.com, 'password': 'demo' ''')
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RegistrationForm()
@@ -246,16 +246,16 @@ def follow(username):
         user = User.query.filter_by(username=username).first()
         if user is None:
             flash('User {} not found.'.format(username))
-            return redirect(url_for('index'))
+            return redirect(request.referrer)
         if user == current_user:
             flash('You cannot follow yourself!')
-            return redirect(url_for('user', username=username))
+            return redirect(request.referrer)
         current_user.follow(user)
         db.session.commit()
         flash('You are following {}!'.format(username))
-        return redirect(url_for('user', username=username))
+        return redirect(request.referrer)
     else:
-        return redirect(url_for('index'))
+        return redirect(request.referrer)
 
 
 @app.route('/unfollow/<username>', methods=['POST'])
@@ -266,16 +266,16 @@ def unfollow(username):
         user = User.query.filter_by(username=username).first()
         if user is None:
             flash('User {} not found.'.format(username))
-            return redirect(url_for('index'))
+            return redirect(request.referrer)
         if user == current_user:
             flash('You cannot unfollow yourself!')
-            return redirect(url_for('user', username=username))
+            return redirect(request.referrer)
         current_user.unfollow(user)
         db.session.commit()
         flash('You are not following {}.'.format(username))
-        return redirect(url_for('user', username=username))
+        return redirect(request.referrer)
     else:
-        return redirect(url_for('index'))
+        return redirect(request.referrer)
 
 
 @app.route('/send_message/<recipient>', methods=['GET', 'POST'])
