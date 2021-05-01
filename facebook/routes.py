@@ -97,12 +97,12 @@ def user(username):
 def edit_post(id):
     post = Post.query.get_or_404(id)
     form = EditPostForm()
-    if current_user is post.author and form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+    if post.author == current_user and form.validate_on_submit():
+        post.body = form.post.data
+        post.author= current_user
         if form.post_image.data is not None:
             post_image = save_post_image(form.post_image.data)
             post.post_image = post_image
-        db.session.add(post)
         db.session.commit()
         flash('The post has been updated.')
         return redirect(url_for('post', id=post.id))
@@ -348,7 +348,7 @@ def like_action(post_id, action):
 def users():
     form=EmptyForm()
     users = User.query.all()
-    return render_template('users.html', users=users, form=form)
+    return render_template('users.html', users=users, form=form, title='users')
 
 
 @app.route('/reset_password_request', methods=['GET', 'POST'])

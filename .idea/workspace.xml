@@ -20,8 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="deploy">
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/avatar/demo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/avatar/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/avatar/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/avatar/user3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/avatar/user4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/cover/demo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/cover/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/cover/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/cover/user3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/cover/user4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/posts/demo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/posts/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/posts/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/posts/user3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/posts/user4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/demo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/user3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/user4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/sh.exe.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/static/img/posts/Koala.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,26 +266,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
-    <state width="1344" height="443" key="GridCell.Tab.0.bottom" timestamp="1619824514785">
+    <state width="1344" height="455" key="GridCell.Tab.0.bottom" timestamp="1619900228102">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="443" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619824514785" />
-    <state width="1344" height="443" key="GridCell.Tab.0.center" timestamp="1619824514784">
+    <state width="1344" height="455" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619900228102" />
+    <state width="1344" height="455" key="GridCell.Tab.0.center" timestamp="1619900228101">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="443" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619824514784" />
-    <state width="1344" height="443" key="GridCell.Tab.0.left" timestamp="1619824514784">
+    <state width="1344" height="455" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619900228101" />
+    <state width="1344" height="455" key="GridCell.Tab.0.left" timestamp="1619900228101">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="443" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619824514784" />
-    <state width="1344" height="443" key="GridCell.Tab.0.right" timestamp="1619824514785">
+    <state width="1344" height="455" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619900228101" />
+    <state width="1344" height="455" key="GridCell.Tab.0.right" timestamp="1619900228102">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="443" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619824514785" />
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619825654044">
+    <state width="1344" height="455" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619900228102" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619826667907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619825654044" />
+    <state x="26" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619826667907" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619796292919">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
