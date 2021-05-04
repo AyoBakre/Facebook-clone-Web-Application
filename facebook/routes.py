@@ -120,6 +120,15 @@ def delete_post(id):
     return redirect(url_for('index'))
 
 
+@app.route('/delete_story/<int:id>/', methods=['GET', 'POST'])
+def delete_story(id):
+    story = Story.query.get_or_404(id)
+    db.session.delete(story)
+    db.session.commit()
+    flash('The story has been deleted.')
+    return redirect(request.referrer)
+
+
 @app.route('/post/<int:id>', methods=['GET', 'POST'])
 @login_required
 def post(id):

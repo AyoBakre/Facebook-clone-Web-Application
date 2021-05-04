@@ -62,11 +62,16 @@
                         <img src="{{url_for('static', filename='img/avatar/' + story.author.profile_image)}}" alt="">
                     </div>
                 </div>
-                <h4> {{story.author.f_name}} {{story.author.l_name}} </h4>
+                {% if current_user == story.author%}
+                <h4><a href="{{url_for('delete_story', id= story.id)}}"> <span class="label label-danger">Delete</span></a> </h4>
+                {%else%}
+                <h4>{{story.author.f_name}} {{story.author.l_name}}</h4>  
+                {%endif%}
             </div>
             <div class="story-image">
                 <img src="{{url_for('static', filename='img/stories/' + story.story_image)}}" alt="">
             </div>
+            
         </div>
         {% endfor %}
         <!---->

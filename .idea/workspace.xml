@@ -20,7 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79621bc2-3533-4480-ba41-9a2a3763b57e" name="Default Changelist" comment="deploy">
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/0d2ed1d5648fdca5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/14ad381fe5228092.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/407aa81b0c2bd6f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/6ffcca1cedbd17d4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/86b11970d80a7a9d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/8906fd6d83d00756.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facebook/static/img/stories/bcd921dbdbfe9629.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/facebook/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,22 +261,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1617607099470" />
-    <state width="1344" height="455" key="GridCell.Tab.0.bottom" timestamp="1619901433208">
+    <state width="1344" height="455" key="GridCell.Tab.0.bottom" timestamp="1620118190792">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="455" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619901433208" />
-    <state width="1344" height="455" key="GridCell.Tab.0.center" timestamp="1619901433208">
+    <state width="1344" height="455" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620118190792" />
+    <state width="1344" height="455" key="GridCell.Tab.0.center" timestamp="1620118190792">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="455" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619901433208" />
-    <state width="1344" height="455" key="GridCell.Tab.0.left" timestamp="1619901433207">
+    <state width="1344" height="455" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620118190792" />
+    <state width="1344" height="455" key="GridCell.Tab.0.left" timestamp="1620118190792">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="455" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619901433207" />
-    <state width="1344" height="455" key="GridCell.Tab.0.right" timestamp="1619901433208">
+    <state width="1344" height="455" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620118190792" />
+    <state width="1344" height="455" key="GridCell.Tab.0.right" timestamp="1620118190792">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="455" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619901433208" />
+    <state width="1344" height="455" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620118190792" />
     <state x="26" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619900930123">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
